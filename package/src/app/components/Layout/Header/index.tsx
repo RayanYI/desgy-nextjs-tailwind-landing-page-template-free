@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Logo from './Logo'
 import HeaderLink from './Navigation/HeaderLink'
@@ -7,13 +7,15 @@ import MobileHeaderLink from './Navigation/MobileHeaderLink'
 
 const Header: React.FC = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
-  const [sticky, setSticky] = useState(false)
+  // Default to sticky (opaque) to prevent flash of transparency on reload
+  // It will adjust to transparent if at the top after hydration
+  const [sticky, setSticky] = useState(true)
 
   const navbarRef = useRef<HTMLDivElement>(null)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
 
   const handleScroll = () => {
-    setSticky(window.scrollY >= 80)
+    setSticky(window.scrollY >= 40)
   }
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -27,6 +29,7 @@ const Header: React.FC = () => {
   }
 
   useEffect(() => {
+    handleScroll()
     window.addEventListener('scroll', handleScroll)
     document.addEventListener('mousedown', handleClickOutside)
     return () => {
@@ -45,13 +48,14 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 z-40 w-full transition-all duration-300 border-b border-black/10 ${sticky ? ' shadow-lg bg-white' : 'shadow-none'
+      className={`fixed top-0 z-40 w-full transition-colors duration-300 border-b border-black/10 ${sticky
+        ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md'
+        : 'bg-transparent shadow-none'
         }`}>
-      <div className='lg:py-0 py-2'>
+      <div className='py-4'>
         <div className='container mx-auto max-w-(--breakpoint-xl) flex items-center justify-between px-4'>
           <div
-            className={`pr-16 lg:border-r border-black/10 duration-300 ${sticky ? 'py-3' : 'py-7'
-              }`}>
+            className={`pr-16 lg:border-r border-black/10 duration-300 py-2`}>
             <Logo />
           </div>
           <nav className='hidden lg:flex grow items-center gap-8 justify-center'>
@@ -61,17 +65,16 @@ const Header: React.FC = () => {
             <HeaderLink item={{ label: 'FAQ', href: '/#faq' }} />
           </nav>
           <div
-            className={`flex items-center gap-4 pl-16 lg:border-l border-black/10 duration-300 ${sticky ? 'py-3' : 'py-7'
-              }`}>
+            className={`flex items-center gap-4 pl-16 lg:border-l border-black/10 duration-300 py-2`}>
             <Link href='#contact'>
-              <button className='hidden lg:block bg-black text-white px-6 py-2.5 rounded-full font-bold hover:bg-gray-800 transition-colors'>
+              <button className='hidden lg:block bg-black text-white px-6 py-2.5 rounded-full font-bold hover:bg-gray-800 transition-colors cursor-pointer'>
                 Démarrer
               </button>
             </Link>
 
             <button
               onClick={() => setNavbarOpen(!navbarOpen)}
-              className='block lg:hidden p-2 rounded-lg'
+              className='block lg:hidden p-2 rounded-lg cursor-pointer'
               aria-label='Toggle mobile menu'>
               <span className='block w-6 h-0.5 bg-darkmode'></span>
               <span className='block w-6 h-0.5 bg-darkmode mt-1.5'></span>
@@ -94,7 +97,7 @@ const Header: React.FC = () => {
             {/*  */}
             <button
               onClick={() => setNavbarOpen(false)}
-              className="bg-[url('/images/closed.svg')] bg-no-repeat bg-contain w-5 h-5 absolute top-0 right-0 mr-8 mt-8 dark:invert"
+              className="bg-[url('/images/closed.svg')] bg-no-repeat bg-contain w-5 h-5 absolute top-0 right-0 mr-8 mt-8 dark:invert cursor-pointer"
               aria-label='Close menu Modal'></button>
           </div>
           <nav className='flex flex-col items-start p-4'>

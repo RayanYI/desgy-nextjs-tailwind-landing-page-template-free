@@ -22,7 +22,7 @@ const Hero = () => {
               Arrêtez de perdre des clients. GoSitePro lance votre site vitrine performant, sécurisé et visible en moins de 7 jours.
             </p>
             <Link href={'#contact'}>
-              <button className='bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold py-4 px-8 rounded-full transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1'>
+              <button className='bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold py-4 px-8 rounded-full transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer'>
                 Lancer mon site
               </button>
             </Link>

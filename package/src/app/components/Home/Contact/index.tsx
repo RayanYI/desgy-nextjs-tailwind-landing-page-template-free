@@ -39,24 +39,24 @@ const Contact = () => {
                             </p>
 
                             <div className='space-y-6'>
-                                <div className='flex items-center gap-4'>
-                                    <div className='w-10 h-10 bg-white/20 rounded-full flex items-center justify-center shrink-0'>
+                                <a href="tel:0622412515" className='flex items-center gap-4 group cursor-pointer'>
+                                    <div className='w-10 h-10 bg-white/20 rounded-full flex items-center justify-center shrink-0 group-hover:bg-white/30 transition-colors'>
                                         <Icon icon='ph:phone-call' className='w-5 h-5 text-white' />
                                     </div>
                                     <div>
-                                        <p className='text-blue-200 text-xs uppercase tracking-wide font-bold'>Appelez-nous</p>
-                                        <p className='font-bold text-lg'>06 22 41 25 15</p>
+                                        <p className='text-blue-200 text-xs uppercase tracking-wide font-bold group-hover:text-white transition-colors'>Appelez-nous</p>
+                                        <p className='font-bold text-lg group-hover:underline'>06 22 41 25 15</p>
                                     </div>
-                                </div>
-                                <div className='flex items-center gap-4'>
-                                    <div className='w-10 h-10 bg-white/20 rounded-full flex items-center justify-center shrink-0'>
+                                </a>
+                                <a href="mailto:contact@gositepro.fr" className='flex items-center gap-4 group cursor-pointer'>
+                                    <div className='w-10 h-10 bg-white/20 rounded-full flex items-center justify-center shrink-0 group-hover:bg-white/30 transition-colors'>
                                         <Icon icon='ph:envelope' className='w-5 h-5 text-white' />
                                     </div>
                                     <div>
-                                        <p className='text-blue-200 text-xs uppercase tracking-wide font-bold'>Écrivez-nous</p>
-                                        <p className='font-bold text-lg'>contact@gositepro.fr</p>
+                                        <p className='text-blue-200 text-xs uppercase tracking-wide font-bold group-hover:text-white transition-colors'>Écrivez-nous</p>
+                                        <p className='font-bold text-lg group-hover:underline'>contact@gositepro.fr</p>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
 
@@ -121,7 +121,7 @@ const Contact = () => {
                             </div>
 
                             <div className='pt-6'>
-                                <button type='submit' className='w-full bg-black hover:bg-gray-800 text-white font-bold py-4 rounded-xl transition-all shadow-lg transform hover:-translate-y-1 flex justify-center items-center gap-2'>
+                                <button type='submit' className='w-full bg-black hover:bg-gray-800 text-white font-bold py-4 rounded-xl transition-all shadow-lg transform hover:-translate-y-1 flex justify-center items-center gap-2 cursor-pointer'>
                                     <span>Lancer mon site maintenant</span>
                                     <Icon icon="ph:arrow-right-bold" />
                                 </button>

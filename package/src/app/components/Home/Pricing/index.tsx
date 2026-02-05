@@ -28,7 +28,7 @@ const Pricing = () => {
                             <li className='flex items-center'><span className='text-green-500 mr-2'>✓</span> Formulaire de contact</li>
                             <li className='flex items-center'><span className='text-green-500 mr-2'>✓</span> Optimisé Mobile</li>
                         </ul>
-                        <button className='w-full py-3 px-6 rounded-full border-2 border-blue-600 text-blue-600 font-semibold hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors'>
+                        <button className='w-full py-3 px-6 rounded-full border-2 border-blue-600 text-blue-600 font-semibold hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors cursor-pointer'>
                             Choisir Start
                         </button>
                     </div>
@@ -50,7 +50,7 @@ const Pricing = () => {
                             <li className='flex items-center'><span className='text-yellow-400 mr-2'>✓</span> Intégration Google Analytics</li>
                             <li className='flex items-center'><span className='text-yellow-400 mr-2'>✓</span> 1 mois de maintenance offert</li>
                         </ul>
-                        <button className='w-full py-3 px-6 rounded-full bg-white text-blue-700 font-bold hover:bg-gray-100 transition-colors shadow-lg'>
+                        <button className='w-full py-3 px-6 rounded-full bg-white text-blue-700 font-bold hover:bg-gray-100 transition-colors shadow-lg cursor-pointer'>
                             Choisir Vitrine
                         </button>
                     </div>
@@ -68,7 +68,7 @@ const Pricing = () => {
                             <li className='flex items-center'><span className='text-green-500 mr-2'>✓</span> Espace Membre / Connexion</li>
                             <li className='flex items-center'><span className='text-green-500 mr-2'>✓</span> Intégrations API spécifiques</li>
                         </ul>
-                        <button className='w-full py-3 px-6 rounded-full border-2 border-gray-300 text-gray-700 dark:text-white dark:border-gray-600 font-semibold hover:border-blue-600 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400 transition-colors'>
+                        <button className='w-full py-3 px-6 rounded-full border-2 border-gray-300 text-gray-700 dark:text-white dark:border-gray-600 font-semibold hover:border-blue-600 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400 transition-colors cursor-pointer'>
                             Demander un Devis
                         </button>
                     </div>
