@@ -58,7 +58,7 @@ const Contact = () => {
                 {/* Header */}
                 <div className='text-center mb-12'>
                     <span className='inline-block py-2 px-4 bg-blue-100 dark:bg-blue-900/40 rounded-full text-blue-700 dark:text-blue-300 text-sm font-bold uppercase tracking-wider mb-4'>
-                        🚀 Prêt à démarrer ?
+                        Prêt à démarrer ?
                     </span>
                     <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4'>
                         Lancez votre{' '}
@@ -142,8 +142,8 @@ const Contact = () => {
                                 <label
                                     htmlFor='name'
                                     className={`absolute left-0 transition-all duration-300 pointer-events-none ${focusedField === 'name' || formData.name
-                                            ? '-top-6 text-xs font-bold text-blue-600 dark:text-blue-400'
-                                            : 'top-3 text-base text-gray-400'
+                                        ? '-top-6 text-xs font-bold text-blue-600 dark:text-blue-400'
+                                        : 'top-3 text-base text-gray-400'
                                         }`}
                                 >
                                     Votre Nom
@@ -168,8 +168,8 @@ const Contact = () => {
                                 <label
                                     htmlFor='email'
                                     className={`absolute left-0 transition-all duration-300 pointer-events-none ${focusedField === 'email' || formData.email
-                                            ? '-top-6 text-xs font-bold text-blue-600 dark:text-blue-400'
-                                            : 'top-3 text-base text-gray-400'
+                                        ? '-top-6 text-xs font-bold text-blue-600 dark:text-blue-400'
+                                        : 'top-3 text-base text-gray-400'
                                         }`}
                                 >
                                     Votre Email
@@ -203,9 +203,9 @@ const Contact = () => {
                                         onChange={handleChange}
                                         disabled={isSubmitting}
                                     >
-                                        <option value='Start'>🚀 Offre Start — 490€</option>
-                                        <option value='Vitrine'>⭐ Offre Vitrine — 890€</option>
-                                        <option value='Custom'>💎 Projet Custom — Sur mesure</option>
+                                        <option value='Start'>Offre Start — 490€</option>
+                                        <option value='Vitrine'>Offre Vitrine — 890€</option>
+                                        <option value='Custom'>Projet Custom — Sur mesure</option>
                                     </select>
                                     <div className='absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500'>
                                         <Icon icon="ph:caret-down-bold" className="w-5 h-5" />

@@ -18,7 +18,7 @@ const Pricing = () => {
             <div className='container mx-auto px-4 max-w-7xl relative z-10'>
                 <div className='text-center max-w-3xl mx-auto mb-16'>
                     <span className='inline-block py-2 px-4 bg-green-100 dark:bg-green-900/40 rounded-full text-green-700 dark:text-green-300 text-sm font-bold uppercase tracking-wider mb-4'>
-                        💰 Tarifs transparents
+                        Tarifs transparents
                     </span>
                     <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6'>
                         Des Offres Claires et{' '}
