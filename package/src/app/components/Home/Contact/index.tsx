@@ -70,7 +70,7 @@ const Contact = () => {
                                         <Icon icon='ph:phone-call' className='w-5 h-5 text-white' />
                                     </div>
                                     <div>
-                                        <p className='text-blue-200 text-xs uppercase tracking-wide font-bold group-hover:text-white transition-colors'>Appelez-nous</p>
+                                        <p className='text-blue-100 text-xs uppercase tracking-wide font-bold group-hover:text-white transition-colors'>Appelez-nous</p>
                                         <p className='font-bold text-lg group-hover:underline'>06 22 41 25 15</p>
                                     </div>
                                 </a>
@@ -79,7 +79,7 @@ const Contact = () => {
                                         <Icon icon='ph:envelope' className='w-5 h-5 text-white' />
                                     </div>
                                     <div>
-                                        <p className='text-blue-200 text-xs uppercase tracking-wide font-bold group-hover:text-white transition-colors'>Écrivez-nous</p>
+                                        <p className='text-blue-100 text-xs uppercase tracking-wide font-bold group-hover:text-white transition-colors'>Écrivez-nous</p>
                                         <p className='font-bold text-lg group-hover:underline'>contact@gositepro.fr</p>
                                     </div>
                                 </a>
@@ -87,7 +87,7 @@ const Contact = () => {
                         </div>
 
                         <div className='relative z-10 mt-12'>
-                            <p className='text-xs text-blue-200 opacity-60'>GoSitePro - Agence Digitale</p>
+                            <p className='text-xs text-blue-100 opacity-60'>GoSitePro - Agence Digitale</p>
                         </div>
                     </div>
 

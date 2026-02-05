@@ -34,6 +34,7 @@ const Hero = () => {
                 src='/images/hero/hero-mockup.png'
                 alt='GoSitePro - Site Web sur Laptop et Mobile'
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className='object-cover transform group-hover:scale-105 transition-transform duration-700'
                 priority
               />

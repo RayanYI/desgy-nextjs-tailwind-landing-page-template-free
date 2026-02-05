@@ -13,8 +13,39 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'GoSitePro',
+    image: 'https://gositepro.fr/images/logo/gositeprologo.png',
+    description: 'Agence web spécialisée dans la création de sites vitrines performants pour professionnels.',
+    url: 'https://gositepro.fr',
+    telephone: '+33622412515',
+    email: 'contact@gositepro.fr',
+    priceRange: '490€ - 890€',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'FR',
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '18:00',
+      },
+    ],
+    sameAs: [
+      'https://www.linkedin.com/company/gositepro', // Adjust if known
+    ],
+  }
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero />
       <Portfolio />
       <Values />
