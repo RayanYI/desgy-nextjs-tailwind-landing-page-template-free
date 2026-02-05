@@ -18,10 +18,10 @@ interface EmailState {
 
 export async function sendEmail(formData: FormData): Promise<EmailState> {
     const rawData = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        projectType: formData.get('projectType'),
-        _honey: formData.get('_check_val') // We'll call the honeypot field '_check_val' in the form
+        name: formData.get('name')?.toString() || '',
+        email: formData.get('email')?.toString() || '',
+        projectType: formData.get('projectType')?.toString() || '',
+        _honey: formData.get('_check_val')?.toString() || '' // Honeypot
     }
 
     // 1. Honeypot Check (Anti-Spam)
@@ -34,9 +34,11 @@ export async function sendEmail(formData: FormData): Promise<EmailState> {
     const result = schema.safeParse(rawData)
 
     if (!result.success) {
+        console.error('Validation error:', JSON.stringify(result.error, null, 2))
+        const errorMessage = result.error.issues[0]?.message || 'Une erreur de validation est survenue'
         return {
             success: false,
-            message: result.error.errors[0].message
+            message: errorMessage
         }
     }
 
@@ -89,8 +91,9 @@ export async function sendEmail(formData: FormData): Promise<EmailState> {
         })
 
         return { success: true, message: 'Email envoyé avec succès !' }
-    } catch (error) {
+    } catch (error: any) {
         console.error('Email error:', error)
-        return { success: false, message: "Une erreur est survenue lors de l'envoi." }
+        // Return actual error for debugging
+        return { success: false, message: `Erreur: ${error.message || 'Problème technique'}` }
     }
 }

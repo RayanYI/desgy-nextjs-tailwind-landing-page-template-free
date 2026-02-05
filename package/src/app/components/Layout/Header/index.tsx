@@ -1,10 +1,14 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
+// ... imports
+import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Logo from './Logo'
 import HeaderLink from './Navigation/HeaderLink'
 import MobileHeaderLink from './Navigation/MobileHeaderLink'
 import { motion, AnimatePresence } from 'framer-motion'
+
+// Workaround for framer-motion type issues with standard HTML attributes
+const MotionDiv = motion.div as any
 
 // Menu icons for each link
 const menuIcons = {
@@ -119,8 +123,9 @@ const Header: React.FC = () => {
           </nav>
           <div
             className={`flex items-center gap-4 pl-16 lg:border-l border-black/10 duration-300 py-2`}>
-            <Link href='/#contact' className='hidden lg:block bg-black text-white px-6 py-2.5 rounded-full font-bold hover:bg-gray-800 transition-colors cursor-pointer'>
-              Démarrer
+            <Link href='/#contact' className='hidden lg:block group relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-7 py-2.5 rounded-full font-bold transition-all cursor-pointer shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-0.5'>
+              <span className="relative z-10">Démarrer</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
             </Link>
 
             {/* Premium Animated Hamburger Button */}
@@ -137,21 +142,21 @@ const Header: React.FC = () => {
                 <div className="w-6 h-5 relative flex flex-col justify-between">
                   <span
                     className={`block h-0.5 rounded-full origin-center transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${navbarOpen
-                        ? 'bg-white rotate-45 translate-y-[9px]'
-                        : 'bg-gray-700 dark:bg-white rotate-0 translate-y-0'
+                      ? 'bg-white rotate-45 translate-y-[9px]'
+                      : 'bg-gray-700 dark:bg-white rotate-0 translate-y-0'
                       }`}
                     style={{ width: 24 }}
                   />
                   <span
                     className={`block h-0.5 w-4 rounded-full transition-all duration-200 ${navbarOpen
-                        ? 'bg-white opacity-0 scale-x-0'
-                        : 'bg-gray-700 dark:bg-white opacity-100 scale-x-100'
+                      ? 'bg-white opacity-0 scale-x-0'
+                      : 'bg-gray-700 dark:bg-white opacity-100 scale-x-100'
                       }`}
                   />
                   <span
                     className={`block h-0.5 rounded-full origin-center transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${navbarOpen
-                        ? 'bg-white -rotate-45 -translate-y-[9px] w-6'
-                        : 'bg-gray-700 dark:bg-white rotate-0 translate-y-0 w-4'
+                      ? 'bg-white -rotate-45 -translate-y-[9px] w-6'
+                      : 'bg-gray-700 dark:bg-white rotate-0 translate-y-0 w-4'
                       }`}
                   />
                 </div>
@@ -164,7 +169,7 @@ const Header: React.FC = () => {
           {navbarOpen && (
             <>
               {/* Premium Backdrop with blur */}
-              <motion.div
+              <MotionDiv
                 variants={backdropVariants}
                 initial="initial"
                 animate="animate"
@@ -174,7 +179,7 @@ const Header: React.FC = () => {
               />
 
               {/* Premium Drawer */}
-              <motion.div
+              <MotionDiv
                 ref={mobileMenuRef}
                 variants={drawerVariants}
                 initial="initial"
@@ -192,7 +197,7 @@ const Header: React.FC = () => {
                 {/* Content */}
                 <div className="relative z-10 flex flex-col h-full">
                   {/* Drawer Header */}
-                  <motion.div
+                  <MotionDiv
                     variants={linkVariants}
                     className="flex items-center justify-between p-6 border-b border-gray-200/50 dark:border-gray-800/50"
                   >
@@ -207,19 +212,19 @@ const Header: React.FC = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     </button>
-                  </motion.div>
+                  </MotionDiv>
 
                   {/* Label */}
-                  <motion.div variants={linkVariants} className="px-6 pt-6 pb-2">
+                  <MotionDiv variants={linkVariants} className="px-6 pt-6 pb-2">
                     <span className="text-xs font-semibold tracking-wider uppercase text-gray-400 dark:text-gray-500">
                       Navigation
                     </span>
-                  </motion.div>
+                  </MotionDiv>
 
                   {/* Premium Drawer Links */}
                   <nav className='flex-1 overflow-y-auto px-4 py-2'>
                     {menuLinks.map((link, index) => (
-                      <motion.div
+                      <MotionDiv
                         key={link.href}
                         variants={linkVariants}
                         custom={index}
@@ -239,12 +244,12 @@ const Header: React.FC = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>
                         </Link>
-                      </motion.div>
+                      </MotionDiv>
                     ))}
                   </nav>
 
                   {/* Premium Drawer Footer / CTA */}
-                  <motion.div
+                  <MotionDiv
                     variants={linkVariants}
                     className="relative p-6 border-t border-gray-200/50 dark:border-gray-800/50"
                   >
@@ -268,9 +273,9 @@ const Header: React.FC = () => {
                     <p className="mt-4 text-xs text-center text-gray-400 dark:text-gray-500">
                       © 2026 GoSitePro. Tous droits réservés.
                     </p>
-                  </motion.div>
+                  </MotionDiv>
                 </div>
-              </motion.div>
+              </MotionDiv>
             </>
           )}
         </AnimatePresence>
