@@ -1,6 +1,15 @@
 'use server'
 
 import nodemailer from 'nodemailer'
+import { z } from 'zod'
+import DOMPurify from 'isomorphic-dompurify'
+
+const schema = z.object({
+    name: z.string().min(2, "Le nom doit contenir au moins 2 caractères"),
+    email: z.string().email("Email invalide"),
+    projectType: z.string(),
+    _honey: z.string().optional() // Honeypot field
+})
 
 interface EmailState {
     success: boolean
@@ -8,13 +17,35 @@ interface EmailState {
 }
 
 export async function sendEmail(formData: FormData): Promise<EmailState> {
-    const name = formData.get('name') as string
-    const email = formData.get('email') as string
-    const projectType = formData.get('projectType') as string
-
-    if (!name || !email || !projectType) {
-        return { success: false, message: 'Veuillez remplir tous les champs.' }
+    const rawData = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        projectType: formData.get('projectType'),
+        _honey: formData.get('_check_val') // We'll call the honeypot field '_check_val' in the form
     }
+
+    // 1. Honeypot Check (Anti-Spam)
+    if (rawData._honey) {
+        // If the bad bot filled this hidden field, just return success to trick them
+        return { success: true, message: 'Email envoyé avec succès !' }
+    }
+
+    // 2. Validation with Zod
+    const result = schema.safeParse(rawData)
+
+    if (!result.success) {
+        return {
+            success: false,
+            message: result.error.errors[0].message
+        }
+    }
+
+    const { name, email, projectType } = result.data
+
+    // 3. Sanitization (Defense in Depth)
+    const cleanName = DOMPurify.sanitize(name)
+    const cleanEmail = DOMPurify.sanitize(email)
+    const cleanProjectType = DOMPurify.sanitize(projectType)
 
     const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS } = process.env
 
@@ -24,7 +55,7 @@ export async function sendEmail(formData: FormData): Promise<EmailState> {
     }
 
     const port = parseInt(SMTP_PORT || '587')
-    const secure = port === 465 // true for 465, false for other ports
+    const secure = port === 465
 
     try {
         const transporter = nodemailer.createTransport({
@@ -39,21 +70,21 @@ export async function sendEmail(formData: FormData): Promise<EmailState> {
 
         // Email to the business owner
         await transporter.sendMail({
-            from: `"${name}" <${SMTP_USER}>`, // Sender address (must be authenticated user usually)
-            to: 'contact@gositepro.fr', // Business email
-            replyTo: email,
-            subject: `Nouveau projet de ${name} - Offre ${projectType}`,
+            from: `"${cleanName}" <${SMTP_USER}>`,
+            to: 'contact@gositepro.fr',
+            replyTo: cleanEmail,
+            subject: `Nouveau projet de ${cleanName} - Offre ${cleanProjectType}`,
             text: `
                 Nouveau prospect :
-                Nom : ${name}
-                Email : ${email}
-                Type de projet : ${projectType}
+                Nom : ${cleanName}
+                Email : ${cleanEmail}
+                Type de projet : ${cleanProjectType}
             `,
             html: `
                 <h1>Nouvelle demande de projet</h1>
-                <p><strong>Nom :</strong> ${name}</p>
-                <p><strong>Email :</strong> ${email}</p>
-                <p><strong>Offre sélectionnée :</strong> ${projectType}</p>
+                <p><strong>Nom :</strong> ${cleanName}</p>
+                <p><strong>Email :</strong> ${cleanEmail}</p>
+                <p><strong>Offre sélectionnée :</strong> ${cleanProjectType}</p>
             `,
         })
 

@@ -149,6 +149,9 @@ const Contact = () => {
                                 </div>
                             </div>
 
+                            {/* Honeypot field - hidden from real users */}
+                            <input type="text" name="_check_val" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+
                             <div className='pt-6'>
                                 <button type='submit' disabled={isSubmitting} className='w-full bg-black hover:bg-gray-800 text-white font-bold py-4 rounded-xl transition-all shadow-lg transform hover:-translate-y-1 flex justify-center items-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed'>
                                     <span>{isSubmitting ? 'Envoi en cours...' : 'Lancer mon site maintenant'}</span>
