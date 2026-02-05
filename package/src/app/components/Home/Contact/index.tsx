@@ -110,8 +110,8 @@ const Contact = () => {
                                         value={formData.projectType}
                                         onChange={handleChange}
                                     >
-                                        <option value='Start'>Offre Start (500€)</option>
-                                        <option value='Vitrine'>Offre Vitrine (900€)</option>
+                                        <option value='Start'>Offre Start (490€)</option>
+                                        <option value='Vitrine'>Offre Vitrine (890€)</option>
                                         <option value='Custom'>Projet Custom (Devis)</option>
                                     </select>
                                     <div className='absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500'>

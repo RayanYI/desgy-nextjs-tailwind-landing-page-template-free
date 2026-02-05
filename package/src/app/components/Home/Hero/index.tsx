@@ -29,15 +29,14 @@ const Hero = () => {
           </div>
           <div className='col-span-12 lg:col-span-6 relative'>
             {/* Visual Suggestion: Speed/Growth */}
-            <div className='relative w-full h-[400px] lg:h-[500px] bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center group'>
-                <div className="absolute inset-0 bg-[url('/images/hero/grid.svg')] opacity-20"></div>
-                <div className="text-white text-center p-8">
-                    <p className="text-2xl font-bold mb-2">🚀 Vitesse & Croissance</p>
-                    <p className="opacity-80">Placeholder Visuel</p>
-                </div>
-                {/* Decorative elements */}
-                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-                <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
+            <div className='relative w-full h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 group'>
+              <Image
+                src='/images/hero/hero-mockup.png'
+                alt='GoSitePro - Site Web sur Laptop et Mobile'
+                fill
+                className='object-cover transform group-hover:scale-105 transition-transform duration-700'
+                priority
+              />
             </div>
           </div>
         </div>

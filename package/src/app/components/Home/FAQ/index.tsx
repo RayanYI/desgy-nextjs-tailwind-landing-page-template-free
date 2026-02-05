@@ -10,7 +10,7 @@ import {
 const faqData = [
   {
     question: "Combien ça coûte réellement ?",
-    answer: "Tout est affiché : 500€ pour une page ou 900€ pour un site complet. Pas d'abonnement mensuel caché pour la création. Seul l'hébergement (environ 50€/an) reste à votre charge après la première année offerte."
+    answer: "Tout est affiché : 490€ pour une page ou 890€ pour un site complet. Pas d'abonnement mensuel caché pour la création. Seul l'hébergement (environ 50€/an) reste à votre charge après la première année offerte."
   },
   {
     question: "Combien de temps avant d'être en ligne ?",

@@ -20,7 +20,7 @@ const Pricing = () => {
                         <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-2'>Start</h3>
                         <p className='text-gray-500 mb-6'>Carte de visite digitale</p>
                         <div className='text-4xl font-bold text-gray-900 dark:text-white mb-6'>
-                            500€ <span className='text-base font-normal text-gray-500'>/ one shot</span>
+                            490€ <span className='text-base font-normal text-gray-500'>/ one shot</span>
                         </div>
                         <ul className='space-y-4 mb-8 text-gray-600 dark:text-gray-300'>
                             <li className='flex items-center'><span className='text-green-500 mr-2'>✓</span> Site One-Page</li>
@@ -35,13 +35,13 @@ const Pricing = () => {
 
                     {/* Offer 2: Vitrine (Featured) */}
                     <div className='bg-gradient-to-b from-blue-600 to-blue-800 rounded-3xl p-8 shadow-2xl relative transform md:-translate-y-4 border border-blue-500'>
-                        <div className='absolute top-0 right-0 bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl'>
+                        <div className='absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-black text-sm font-bold px-4 py-1 rounded-full shadow-md uppercase tracking-wider'>
                             POPULAIRE
                         </div>
                         <h3 className='text-2xl font-bold text-white mb-2'>Vitrine</h3>
                         <p className='text-blue-100 mb-6'>L'offre standard pour convaincre</p>
                         <div className='text-4xl font-bold text-white mb-6'>
-                            900€ <span className='text-base font-normal text-blue-200'>/ one shot</span>
+                            890€ <span className='text-base font-normal text-blue-200'>/ one shot</span>
                         </div>
                         <ul className='space-y-4 mb-8 text-white'>
                             <li className='flex items-center'><span className='text-yellow-400 mr-2'>✓</span> <strong>Site Multi-pages (jusqu'à 5)</strong></li>

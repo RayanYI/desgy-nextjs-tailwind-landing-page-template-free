@@ -1,10 +1,12 @@
 import { Manrope } from 'next/font/google'
+import { Metadata } from 'next'
 import './globals.css'
 import Header from '@/app/components/Layout/Header'
 import Footer from '@/app/components/Layout/Footer'
 import ScrollToTop from '@/app/components/ScrollToTop'
 import Aoscompo from '@/utils/aos'
 const font = Manrope({ subsets: ['latin'] })
+
 
 export default function RootLayout({
   children,
