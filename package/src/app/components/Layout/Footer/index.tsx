@@ -35,7 +35,8 @@ const Footer = () => {
               Experts en création de sites web performants pour les professionnels exigeants. Votre présence en ligne, notre expertise.
             </p>
 
-            {/* Social Links */}
+            {/* Social Links 
+
             <div className='flex items-center gap-3 mt-8'>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className='w-10 h-10 rounded-xl bg-white/5 hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-1'>
                 <Icon icon="ph:linkedin-logo-fill" className="w-5 h-5" />
@@ -47,7 +48,9 @@ const Footer = () => {
                 <Icon icon="ph:instagram-logo-fill" className="w-5 h-5" />
               </a>
             </div>
+            */}
           </div>
+
 
           {/* Links Columns */}
           <div className='lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8'>
