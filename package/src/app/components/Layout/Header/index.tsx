@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Logo from './Logo'
 import HeaderLink from './Navigation/HeaderLink'
 import MobileHeaderLink from './Navigation/MobileHeaderLink'
-import { Icon } from '@iconify/react'
 
 const Header: React.FC = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
@@ -73,9 +72,11 @@ const Header: React.FC = () => {
 
             <button
               onClick={() => setNavbarOpen(!navbarOpen)}
-              className='block lg:hidden p-2 rounded-lg cursor-pointer text-gray-900 dark:text-white'
+              className='block lg:hidden p-2 rounded-lg cursor-pointer text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
               aria-label='Toggle mobile menu'>
-              <Icon icon="ph:list" className="w-8 h-8" />
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
             </button>
           </div>
         </div>
@@ -84,7 +85,7 @@ const Header: React.FC = () => {
         )}
         <div
           ref={mobileMenuRef}
-          className={`lg:hidden fixed top-0 right-0 h-full w-full bg-white dark:bg-gray-900 shadow-lg transform transition-transform duration-300 max-w-xs ${navbarOpen ? 'translate-x-0' : 'translate-x-full'
+          className={`lg:hidden fixed top-0 right-0 h-screen w-full bg-white dark:bg-gray-950 shadow-2xl transform transition-transform duration-300 ${navbarOpen ? 'translate-x-0' : 'translate-x-full'
             } z-50`}>
           <div className='flex items-center justify-between p-6 border-b border-gray-100 dark:border-gray-800'>
             <div onClick={() => setNavbarOpen(false)}>
@@ -95,14 +96,19 @@ const Header: React.FC = () => {
               onClick={() => setNavbarOpen(false)}
               className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer text-gray-900 dark:text-white"
               aria-label='Close menu Modal'>
-              <Icon icon="ph:x" className="w-6 h-6" />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
           </div>
           <nav className='flex flex-col items-start p-4'>
-            <MobileHeaderLink item={{ label: 'Réalisations', href: '/#portfolio' }} />
-            <MobileHeaderLink item={{ label: 'Notre Mission', href: '/#values' }} />
-            <MobileHeaderLink item={{ label: 'Tarifs', href: '/#pricing' }} />
-            <MobileHeaderLink item={{ label: 'FAQ', href: '/#faq' }} />
+            <MobileHeaderLink item={{ label: 'Réalisations', href: '/#portfolio' }} closeMenu={() => setNavbarOpen(false)} />
+            <MobileHeaderLink item={{ label: 'Notre Mission', href: '/#values' }} closeMenu={() => setNavbarOpen(false)} />
+            <MobileHeaderLink item={{ label: 'Tarifs', href: '/#pricing' }} closeMenu={() => setNavbarOpen(false)} />
+            <MobileHeaderLink item={{ label: 'FAQ', href: '/#faq' }} closeMenu={() => setNavbarOpen(false)} />
+            <Link href='/#contact' onClick={() => setNavbarOpen(false)} className='bg-black dark:bg-white text-white dark:text-gray-900 px-6 py-3 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors cursor-pointer w-full text-center mt-6 shadow-lg transform active:scale-95 duration-200'>
+              Démarrer mon projet
+            </Link>
           </nav>
         </div>
       </div>
