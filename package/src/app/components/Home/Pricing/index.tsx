@@ -1,76 +1,207 @@
 'use client'
 import React from 'react'
+import Link from 'next/link'
+import { Icon } from '@iconify/react'
 
 const Pricing = () => {
     return (
-        <section className='py-24 relative overflow-hidden' id='pricing'>
+        <section className='relative py-24 overflow-hidden' id='pricing'>
+            {/* Background */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/50 to-white dark:from-gray-900 dark:via-gray-800/30 dark:to-gray-900" />
+
+            {/* Decorative elements */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div className="absolute top-1/2 left-0 w-[500px] h-[500px] -translate-x-1/2 -translate-y-1/2 bg-blue-200/30 dark:bg-blue-900/20 rounded-full blur-3xl" />
+                <div className="absolute top-1/2 right-0 w-[500px] h-[500px] translate-x-1/2 -translate-y-1/2 bg-purple-200/30 dark:bg-purple-900/20 rounded-full blur-3xl" />
+            </div>
+
             <div className='container mx-auto px-4 max-w-7xl relative z-10'>
                 <div className='text-center max-w-3xl mx-auto mb-16'>
-                    <h2 className='text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6'>
-                        Des Offres Claires et Sans Surprise
+                    <span className='inline-block py-2 px-4 bg-green-100 dark:bg-green-900/40 rounded-full text-green-700 dark:text-green-300 text-sm font-bold uppercase tracking-wider mb-4'>
+                        💰 Tarifs transparents
+                    </span>
+                    <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6'>
+                        Des Offres Claires et{' '}
+                        <span className='text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600'>
+                            Sans Surprise
+                        </span>
                     </h2>
                     <p className='text-lg text-gray-600 dark:text-gray-400'>
                         Pas de coûts cachés. Choisissez la formule adaptée à votre stade de développement.
                     </p>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-8 items-start'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch'>
                     {/* Offer 1: Start */}
-                    <div className='bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 relative'>
+                    <div className='group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 relative hover:shadow-2xl hover:-translate-y-2 transition-all duration-500'>
+                        <div className='absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gray-100 to-transparent dark:from-gray-700 rounded-bl-[100px] -z-10 group-hover:scale-150 transition-transform duration-500' />
+
                         <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-2'>Start</h3>
                         <p className='text-gray-500 mb-6'>Carte de visite digitale</p>
-                        <div className='text-4xl font-bold text-gray-900 dark:text-white mb-6'>
-                            490€ <span className='text-base font-normal text-gray-500'>/ one shot</span>
+                        <div className='text-5xl font-bold text-gray-900 dark:text-white mb-2'>
+                            490€
                         </div>
+                        <p className='text-sm text-gray-500 mb-8'>Paiement unique</p>
+
                         <ul className='space-y-4 mb-8 text-gray-600 dark:text-gray-300'>
-                            <li className='flex items-center'><span className='text-green-500 mr-2'>✓</span> Site One-Page</li>
-                            <li className='flex items-center'><span className='text-green-500 mr-2'>✓</span> Design Pro & Rapide</li>
-                            <li className='flex items-center'><span className='text-green-500 mr-2'>✓</span> Formulaire de contact</li>
-                            <li className='flex items-center'><span className='text-green-500 mr-2'>✓</span> Optimisé Mobile</li>
+                            <li className='flex items-center gap-3'>
+                                <div className='w-6 h-6 bg-green-100 dark:bg-green-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
+                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-green-600 dark:text-green-400" />
+                                </div>
+                                Site One-Page
+                            </li>
+                            <li className='flex items-center gap-3'>
+                                <div className='w-6 h-6 bg-green-100 dark:bg-green-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
+                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-green-600 dark:text-green-400" />
+                                </div>
+                                Design Pro & Rapide
+                            </li>
+                            <li className='flex items-center gap-3'>
+                                <div className='w-6 h-6 bg-green-100 dark:bg-green-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
+                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-green-600 dark:text-green-400" />
+                                </div>
+                                Formulaire de contact
+                            </li>
+                            <li className='flex items-center gap-3'>
+                                <div className='w-6 h-6 bg-green-100 dark:bg-green-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
+                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-green-600 dark:text-green-400" />
+                                </div>
+                                Optimisé Mobile
+                            </li>
                         </ul>
-                        <button className='w-full py-3 px-6 rounded-full border-2 border-blue-600 text-blue-600 font-semibold hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors cursor-pointer'>
-                            Choisir Start
-                        </button>
+
+                        <Link href="#contact">
+                            <button className='w-full py-4 px-6 rounded-full border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-white font-semibold hover:border-blue-600 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400 transition-all cursor-pointer group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20'>
+                                Choisir Start
+                            </button>
+                        </Link>
                     </div>
 
                     {/* Offer 2: Vitrine (Featured) */}
-                    <div className='bg-gradient-to-b from-blue-600 to-blue-800 rounded-3xl p-8 shadow-2xl relative transform md:-translate-y-4 border border-blue-500'>
-                        <div className='absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-black text-sm font-bold px-4 py-1 rounded-full shadow-md uppercase tracking-wider'>
-                            POPULAIRE
+                    <div className='group relative md:-mt-4 md:mb-4'>
+                        {/* Shine effect */}
+                        <div className="absolute -inset-[2px] bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 rounded-3xl opacity-80 blur-sm group-hover:blur-md transition-all duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 rounded-3xl overflow-hidden">
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
                         </div>
-                        <h3 className='text-2xl font-bold text-white mb-2'>Vitrine</h3>
-                        <p className='text-blue-100 mb-6'>L'offre standard pour convaincre</p>
-                        <div className='text-4xl font-bold text-white mb-6'>
-                            890€ <span className='text-base font-normal text-blue-200'>/ one shot</span>
+
+                        <div className='relative bg-gradient-to-b from-blue-600 to-blue-800 rounded-3xl p-8 shadow-2xl h-full'>
+                            <div className='absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-yellow-400 to-orange-400 text-black text-sm font-bold px-6 py-2 rounded-full shadow-lg uppercase tracking-wider flex items-center gap-2'>
+                                <Icon icon="ph:star-fill" className="w-4 h-4" />
+                                POPULAIRE
+                            </div>
+
+                            <h3 className='text-2xl font-bold text-white mb-2 mt-4'>Vitrine</h3>
+                            <p className='text-blue-100 mb-6'>L'offre standard pour convaincre</p>
+                            <div className='text-5xl font-bold text-white mb-2'>
+                                890€
+                            </div>
+                            <p className='text-sm text-blue-200 mb-8'>Paiement unique</p>
+
+                            <ul className='space-y-4 mb-8 text-white'>
+                                <li className='flex items-center gap-3'>
+                                    <div className='w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0'>
+                                        <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-yellow-400" />
+                                    </div>
+                                    <strong>Site Multi-pages (jusqu'à 5)</strong>
+                                </li>
+                                <li className='flex items-center gap-3'>
+                                    <div className='w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0'>
+                                        <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-yellow-400" />
+                                    </div>
+                                    Blog / Actualités inclus
+                                </li>
+                                <li className='flex items-center gap-3'>
+                                    <div className='w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0'>
+                                        <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-yellow-400" />
+                                    </div>
+                                    Optimisation SEO avancée
+                                </li>
+                                <li className='flex items-center gap-3'>
+                                    <div className='w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0'>
+                                        <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-yellow-400" />
+                                    </div>
+                                    Intégration Google Analytics
+                                </li>
+                                <li className='flex items-center gap-3'>
+                                    <div className='w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0'>
+                                        <Icon icon="ph:gift-fill" className="w-3.5 h-3.5 text-yellow-400" />
+                                    </div>
+                                    1 mois de maintenance offert
+                                </li>
+                            </ul>
+
+                            <Link href="#contact">
+                                <button className='w-full py-4 px-6 rounded-full bg-white text-blue-700 font-bold hover:bg-gray-100 transition-all shadow-lg cursor-pointer hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2'>
+                                    Choisir Vitrine
+                                    <Icon icon="ph:arrow-right-bold" className="w-5 h-5" />
+                                </button>
+                            </Link>
                         </div>
-                        <ul className='space-y-4 mb-8 text-white'>
-                            <li className='flex items-center'><span className='text-yellow-400 mr-2'>✓</span> <strong>Site Multi-pages (jusqu'à 5)</strong></li>
-                            <li className='flex items-center'><span className='text-yellow-400 mr-2'>✓</span> Blog / Actualités inclus</li>
-                            <li className='flex items-center'><span className='text-yellow-400 mr-2'>✓</span> Optimisation SEO avancée</li>
-                            <li className='flex items-center'><span className='text-yellow-400 mr-2'>✓</span> Intégration Google Analytics</li>
-                            <li className='flex items-center'><span className='text-yellow-400 mr-2'>✓</span> 1 mois de maintenance offert</li>
-                        </ul>
-                        <button className='w-full py-3 px-6 rounded-full bg-white text-blue-700 font-bold hover:bg-gray-100 transition-colors shadow-lg cursor-pointer'>
-                            Choisir Vitrine
-                        </button>
                     </div>
 
                     {/* Offer 3: Custom */}
-                    <div className='bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 relative'>
+                    <div className='group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 relative hover:shadow-2xl hover:-translate-y-2 transition-all duration-500'>
+                        <div className='absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100 to-transparent dark:from-purple-900/30 rounded-bl-[100px] -z-10 group-hover:scale-150 transition-transform duration-500' />
+
                         <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-2'>Custom</h3>
                         <p className='text-gray-500 mb-6'>Pour les projets ambitieux</p>
-                        <div className='text-4xl font-bold text-gray-900 dark:text-white mb-6'>
+                        <div className='text-4xl font-bold text-gray-900 dark:text-white mb-2'>
                             Sur Devis
                         </div>
+                        <p className='text-sm text-gray-500 mb-8'>Estimation gratuite</p>
+
                         <ul className='space-y-4 mb-8 text-gray-600 dark:text-gray-300'>
-                            <li className='flex items-center'><span className='text-green-500 mr-2'>✓</span> <strong>Application Web / SaaS</strong></li>
-                            <li className='flex items-center'><span className='text-green-500 mr-2'>✓</span> E-commerce Complexe</li>
-                            <li className='flex items-center'><span className='text-green-500 mr-2'>✓</span> Espace Membre / Connexion</li>
-                            <li className='flex items-center'><span className='text-green-500 mr-2'>✓</span> Intégrations API spécifiques</li>
+                            <li className='flex items-center gap-3'>
+                                <div className='w-6 h-6 bg-purple-100 dark:bg-purple-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
+                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+                                </div>
+                                <strong>Application Web / SaaS</strong>
+                            </li>
+                            <li className='flex items-center gap-3'>
+                                <div className='w-6 h-6 bg-purple-100 dark:bg-purple-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
+                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+                                </div>
+                                E-commerce Complexe
+                            </li>
+                            <li className='flex items-center gap-3'>
+                                <div className='w-6 h-6 bg-purple-100 dark:bg-purple-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
+                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+                                </div>
+                                Espace Membre / Connexion
+                            </li>
+                            <li className='flex items-center gap-3'>
+                                <div className='w-6 h-6 bg-purple-100 dark:bg-purple-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
+                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+                                </div>
+                                Intégrations API spécifiques
+                            </li>
                         </ul>
-                        <button className='w-full py-3 px-6 rounded-full border-2 border-gray-300 text-gray-700 dark:text-white dark:border-gray-600 font-semibold hover:border-blue-600 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400 transition-colors cursor-pointer'>
-                            Demander un Devis
-                        </button>
+
+                        <Link href="#contact">
+                            <button className='w-full py-4 px-6 rounded-full border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-white font-semibold hover:border-purple-600 hover:text-purple-600 dark:hover:border-purple-400 dark:hover:text-purple-400 transition-all cursor-pointer group-hover:bg-purple-50 dark:group-hover:bg-purple-900/20'>
+                                Demander un Devis
+                            </button>
+                        </Link>
+                    </div>
+                </div>
+
+                {/* Trust badges */}
+                <div className='mt-16 text-center'>
+                    <p className='text-sm text-gray-500 dark:text-gray-400 mb-6'>Ils nous font confiance</p>
+                    <div className='flex flex-wrap justify-center items-center gap-8 opacity-60'>
+                        <div className='flex items-center gap-2'>
+                            <Icon icon="ph:shield-check-fill" className="w-6 h-6 text-green-600" />
+                            <span className='text-sm font-medium text-gray-600 dark:text-gray-300'>Paiement sécurisé</span>
+                        </div>
+                        <div className='flex items-center gap-2'>
+                            <Icon icon="ph:lock-fill" className="w-6 h-6 text-blue-600" />
+                            <span className='text-sm font-medium text-gray-600 dark:text-gray-300'>SSL inclus</span>
+                        </div>
+                        <div className='flex items-center gap-2'>
+                            <Icon icon="ph:handshake-fill" className="w-6 h-6 text-purple-600" />
+                            <span className='text-sm font-medium text-gray-600 dark:text-gray-300'>Satisfait ou remboursé</span>
+                        </div>
                     </div>
                 </div>
             </div>

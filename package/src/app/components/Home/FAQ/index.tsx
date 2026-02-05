@@ -1,63 +1,131 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { Icon } from '@iconify/react'
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from '@headlessui/react'
 
 const faqData = [
   {
     question: "Combien ça coûte réellement ?",
-    answer: "Tout est affiché : 490€ pour une page ou 890€ pour un site complet. Pas d'abonnement mensuel caché pour la création. Seul l'hébergement (environ 50€/an) reste à votre charge après la première année offerte."
+    answer: "Tout est affiché : 490€ pour une page ou 890€ pour un site complet. Pas d'abonnement mensuel caché pour la création. Seul l'hébergement (environ 50€/an) reste à votre charge après la première année offerte.",
+    icon: "ph:currency-eur-duotone"
   },
   {
     question: "Combien de temps avant d'être en ligne ?",
-    answer: "Une fois que nous avons vos contenus (textes, photos), nous nous engageons à livrer une première version en 5 jours ouvrés. La mise en ligne définitive se fait sous 7 jours maximum."
+    answer: "Une fois que nous avons vos contenus (textes, photos), nous nous engageons à livrer une première version en 5 jours ouvrés. La mise en ligne définitive se fait sous 7 jours maximum.",
+    icon: "ph:clock-countdown-duotone"
   },
   {
     question: "Est-ce que je suis propriétaire de mon site ?",
-    answer: "OUI. À 100%. Contrairement à certaines plateformes, vous possédez votre nom de domaine et tous les fichiers de votre site. Vous êtes libre de partir quand vous voulez."
+    answer: "OUI. À 100%. Contrairement à certaines plateformes, vous possédez votre nom de domaine et tous les fichiers de votre site. Vous êtes libre de partir quand vous voulez.",
+    icon: "ph:key-duotone"
   },
   {
     question: "Qui s'occupe de la maintenance ?",
-    answer: "Nous offrons 1 mois de maintenance pour s'assurer que tout roule. Ensuite, le site est conçu pour être stable et sécurisé sans intervention constante. Si vous avez besoin de modifications, nous proposons des forfaits d'intervention à la demande."
+    answer: "Nous offrons 1 mois de maintenance pour s'assurer que tout roule. Ensuite, le site est conçu pour être stable et sécurisé sans intervention constante. Si vous avez besoin de modifications, nous proposons des forfaits d'intervention à la demande.",
+    icon: "ph:wrench-duotone"
   }
 ]
 
 const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
+
   return (
-    <section id='faq' className='relative py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden'>
-      <div className='container mx-auto max-w-7xl px-4'>
+    <section id='faq' className='relative py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden'>
+      {/* Background decoration */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-0 w-[400px] h-[400px] -translate-x-1/2 -translate-y-1/2 bg-blue-200/30 dark:bg-blue-900/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 right-0 w-[400px] h-[400px] translate-x-1/2 -translate-y-1/2 bg-purple-200/30 dark:bg-purple-900/20 rounded-full blur-3xl" />
+      </div>
+
+      <div className='container mx-auto max-w-7xl px-4 relative z-10'>
         <div className='text-center mb-16'>
-          <p className='text-lg font-bold text-blue-600 dark:text-blue-400 mb-2'>Questions Fréquentes</p>
-          <h2 className='text-3xl md:text-4xl font-bold text-gray-900 dark:text-white max-w-3xl mx-auto'>
-            On lève tous vos doutes.
+          <span className='inline-block py-2 px-4 bg-orange-100 dark:bg-orange-900/40 rounded-full text-orange-700 dark:text-orange-300 text-sm font-bold uppercase tracking-wider mb-4'>
+            ❓ Questions Fréquentes
+          </span>
+          <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white max-w-3xl mx-auto'>
+            On lève{' '}
+            <span className='text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600'>
+              tous vos doutes
+            </span>
           </h2>
         </div>
 
-        <div className='max-w-4xl mx-auto space-y-4'>
-          {faqData.map((item, index) => (
-            <div key={index} className='mx-auto w-full rounded-2xl bg-white dark:bg-gray-700 p-6 shadow-sm border border-gray-100 dark:border-gray-600'>
-              <Disclosure>
-                {({ open }) => (
-                  <div>
-                    <DisclosureButton className='flex w-full justify-between items-center text-left text-lg font-bold text-gray-900 dark:text-white focus:outline-none'>
-                      <span>{item.question}</span>
-                      <Icon
-                        icon='lucide:chevron-up'
-                        className={`${open ? 'rotate-180 transform' : ''} h-5 w-5 text-blue-500`}
-                      />
-                    </DisclosureButton>
-                    <DisclosurePanel className='pt-4 text-base text-gray-600 dark:text-gray-300'>
-                      {item.answer}
-                    </DisclosurePanel>
+        <div className='max-w-3xl mx-auto space-y-4'>
+          {faqData.map((item, index) => {
+            const isOpen = openIndex === index
+
+            return (
+              <div
+                key={index}
+                className={`group rounded-2xl transition-all duration-300 ${isOpen
+                    ? 'bg-white dark:bg-gray-800 shadow-xl border-2 border-blue-500/20'
+                    : 'bg-white/80 dark:bg-gray-800/80 shadow-md hover:shadow-lg border border-gray-100 dark:border-gray-700'
+                  }`}
+              >
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className='flex w-full items-center gap-4 p-6 text-left cursor-pointer'
+                >
+                  {/* Icon */}
+                  <div className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${isOpen
+                      ? 'bg-gradient-to-br from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/25'
+                      : 'bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40 group-hover:text-blue-600 dark:group-hover:text-blue-400'
+                    }`}>
+                    <Icon icon={item.icon} className="w-6 h-6" />
                   </div>
-                )}
-              </Disclosure>
-            </div>
-          ))}
+
+                  {/* Question */}
+                  <div className='flex-1 min-w-0'>
+                    <span className={`block text-lg font-bold transition-colors ${isOpen
+                        ? 'text-blue-600 dark:text-blue-400'
+                        : 'text-gray-900 dark:text-white'
+                      }`}>
+                      {item.question}
+                    </span>
+                  </div>
+
+                  {/* Arrow */}
+                  <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen
+                      ? 'bg-blue-100 dark:bg-blue-900/40 rotate-180'
+                      : 'bg-gray-100 dark:bg-gray-700'
+                    }`}>
+                    <Icon
+                      icon='ph:caret-down-bold'
+                      className={`w-5 h-5 transition-colors ${isOpen
+                          ? 'text-blue-600 dark:text-blue-400'
+                          : 'text-gray-400'
+                        }`}
+                    />
+                  </div>
+                </button>
+
+                {/* Answer */}
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                >
+                  <div className='px-6 pb-6 pl-[88px]'>
+                    <p className='text-base text-gray-600 dark:text-gray-300 leading-relaxed'>
+                      {item.answer}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* CTA */}
+        <div className='mt-12 text-center'>
+          <p className='text-gray-500 dark:text-gray-400 mb-4'>
+            Vous avez d'autres questions ?
+          </p>
+          <a
+            href="#contact"
+            className='inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:underline'
+          >
+            Contactez-nous directement
+            <Icon icon="ph:arrow-right-bold" className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>
