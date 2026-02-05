@@ -4,6 +4,7 @@ import Hero from '@/app/components/Home/Hero'
 import Portfolio from '@/app/components/Home/Portfolio'
 import Values from '@/app/components/Home/Values'
 import Pricing from '@/app/components/Home/Pricing'
+import FAQ from '@/app/components/Home/FAQ'
 import Contact from '@/app/components/Home/Contact'
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function Home() {
       <Portfolio />
       <Values />
       <Pricing />
+      <FAQ />
       <Contact />
     </main>
   )

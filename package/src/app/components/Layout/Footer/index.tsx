@@ -17,37 +17,7 @@ const Footer = () => {
               Experts en création de sites web performants pour les professionnels exigeants.
             </p>
             <div className='flex items-center gap-4'>
-              {/* Social icons can remain or be removed. Keeping them for visual consistency with template */}
-              <div className='footer-icons'>
-                <Link href='#'>
-                  <Image
-                    src={'/images/footer/vec.svg'}
-                    alt='facebook'
-                    width={15}
-                    height={20}
-                  />
-                </Link>
-              </div>
-              <div className='footer-icons'>
-                <Link href='#'>
-                  <Image
-                    src={'/images/footer/twitter.svg'}
-                    alt='twitter'
-                    width={25}
-                    height={20}
-                  />
-                </Link>
-              </div>
-              <div className='footer-icons'>
-                <Link href='#'>
-                  <Image
-                    src={'/images/footer/instagram.svg'}
-                    alt='instagram'
-                    width={25}
-                    height={20}
-                  />
-                </Link>
-              </div>
+              {/* Social icons removed as requested */}
             </div>
           </div>
 
@@ -64,8 +34,8 @@ const Footer = () => {
             <div>
               <h5 className='text-white text-xl font-bold mb-6'>Légal</h5>
               <ul className='space-y-4'>
-                <li><Link href='#' className='text-gray-400 hover:text-white'>Mentions Légales</Link></li>
-                <li><Link href='#' className='text-gray-400 hover:text-white'>Politique de confidentialité</Link></li>
+                <li><Link href='/mentions-legales' className='text-gray-400 hover:text-white'>Mentions Légales</Link></li>
+                <li><Link href='/politique-de-confidentialite' className='text-gray-400 hover:text-white'>Politique de confidentialité</Link></li>
               </ul>
             </div>
           </div>
@@ -77,10 +47,7 @@ const Footer = () => {
         <div className='pt-5 pb-5 px-4 sm:px-6 lg:px-4 border-t border-white/30'>
           <div className='mt-4 flex flex-col md:flex-row justify-center md:justify-between items-center'>
             <p className='text-center md:text-start text-white text-base'>
-              @2025 - GoSitePro. Tous droits réservés.
-            </p>
-            <p className='text-center md:text-end text-gray-500 text-sm mt-2 md:mt-0'>
-              Design inspired by Desgy
+              @2026 - GoSitePro. Tous droits réservés.
             </p>
           </div>
         </div>
