@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { Icon } from '@iconify/react'
 import toast from 'react-hot-toast'
+import { sendEmail } from '@/app/actions/sendEmail'
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -9,20 +10,39 @@ const Contact = () => {
         email: '',
         projectType: 'Vitrine'
     })
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        // Here you would normally send the data to an API
-        toast.success('Merci ! Nous avons bien reçu votre demande.')
-        setFormData({
-            name: '',
-            email: '',
-            projectType: 'Vitrine'
-        })
+        setIsSubmitting(true)
+
+        try {
+            const data = new FormData()
+            data.append('name', formData.name)
+            data.append('email', formData.email)
+            data.append('projectType', formData.projectType)
+
+            const result = await sendEmail(data)
+
+            if (result.success) {
+                toast.success('Merci ! Nous avons bien reçu votre demande.')
+                setFormData({
+                    name: '',
+                    email: '',
+                    projectType: 'Vitrine'
+                })
+            } else {
+                toast.error(result.message || "Erreur lors de l'envoi.")
+            }
+        } catch (error) {
+            toast.error("Une erreur inattendue s'est produite.")
+        } finally {
+            setIsSubmitting(false)
+        }
     }
 
     return (
@@ -87,6 +107,7 @@ const Contact = () => {
                                     placeholder='Jean Dupont'
                                     value={formData.name}
                                     onChange={handleChange}
+                                    disabled={isSubmitting}
                                 />
                             </div>
                             <div>
@@ -102,6 +123,7 @@ const Contact = () => {
                                     placeholder='jean@exemple.com'
                                     value={formData.email}
                                     onChange={handleChange}
+                                    disabled={isSubmitting}
                                 />
                             </div>
                             <div>
@@ -115,6 +137,7 @@ const Contact = () => {
                                         className='w-full px-0 py-3 bg-transparent border-b-2 border-gray-200 focus:border-blue-600 outline-none transition-colors text-gray-900 dark:text-white appearance-none cursor-pointer'
                                         value={formData.projectType}
                                         onChange={handleChange}
+                                        disabled={isSubmitting}
                                     >
                                         <option value='Start'>Offre Start (490€)</option>
                                         <option value='Vitrine'>Offre Vitrine (890€)</option>
@@ -127,9 +150,9 @@ const Contact = () => {
                             </div>
 
                             <div className='pt-6'>
-                                <button type='submit' className='w-full bg-black hover:bg-gray-800 text-white font-bold py-4 rounded-xl transition-all shadow-lg transform hover:-translate-y-1 flex justify-center items-center gap-2 cursor-pointer'>
-                                    <span>Lancer mon site maintenant</span>
-                                    <Icon icon="ph:arrow-right-bold" />
+                                <button type='submit' disabled={isSubmitting} className='w-full bg-black hover:bg-gray-800 text-white font-bold py-4 rounded-xl transition-all shadow-lg transform hover:-translate-y-1 flex justify-center items-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed'>
+                                    <span>{isSubmitting ? 'Envoi en cours...' : 'Lancer mon site maintenant'}</span>
+                                    {!isSubmitting && <Icon icon="ph:arrow-right-bold" />}
                                 </button>
                                 <p className='text-xs text-center text-gray-400 mt-4 flex items-center justify-center gap-1'>
                                     <Icon icon="ph:lock-simple" />
