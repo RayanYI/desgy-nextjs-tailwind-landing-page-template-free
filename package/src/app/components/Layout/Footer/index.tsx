@@ -26,9 +26,9 @@ const Footer = () => {
             <div>
               <h5 className='text-white text-xl font-bold mb-6'>Liens Rapides</h5>
               <ul className='space-y-4'>
-                <li><Link href='#' className='text-gray-400 hover:text-white'>Accueil</Link></li>
-                <li><Link href='#pricing' className='text-gray-400 hover:text-white'>Tarifs</Link></li>
-                <li><Link href='mailto:contact@gositepro.fr' className='text-gray-400 hover:text-white'>Contact</Link></li>
+                <li><Link href='/#hero' className='text-gray-400 hover:text-white cursor-pointer'>Accueil</Link></li>
+                <li><Link href='/#pricing' className='text-gray-400 hover:text-white cursor-pointer'>Tarifs</Link></li>
+                <li><Link href='/#contact' className='text-gray-400 hover:text-white cursor-pointer'>Contact</Link></li>
               </ul>
             </div>
             <div>
