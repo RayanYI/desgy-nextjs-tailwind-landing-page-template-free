@@ -2,40 +2,24 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
-import { footerlinks } from '@/app/types/footerlinks'
 
-const footer = () => {
-  // fetch data
-
-  const [footerlinks, setFooterLinks] = useState<footerlinks[]>([])
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/data')
-        if (!res.ok) throw new Error('Failed to fetch')
-        const data = await res.json()
-        setFooterLinks(data.FooterLinksData)
-      } catch (error) {
-        console.error('Error fetching services:', error)
-      }
-    }
-    fetchData()
-  }, [])
-
+const Footer = () => {
   return (
-    <div className='bg-black' id='first-section'>
-      <div className='container mx-auto max-w-2xl pt-48 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8'>
+    <div className='bg-black' id='footer'>
+      <div className='container mx-auto max-w-2xl pt-24 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8'>
         <div className='grid grid-cols-1 gap-y-10 gap-x-16 sm:grid-cols-2 lg:grid-cols-12 xl:gap-x-8'>
           {/* COLUMN-1 */}
-          <div className='col-span-4'>
-            <h4 className='text-white text-3xl leading-9 mb-4 lg:mb-20'>
-              Desgy Solutions
+          <div className='col-span-12 lg:col-span-4'>
+            <h4 className='text-white text-3xl font-bold leading-9 mb-4'>
+              GoSitePro
             </h4>
+            <p className='text-gray-400 mb-8'>
+              Experts en création de sites web performants pour les professionnels exigeants.
+            </p>
             <div className='flex items-center gap-4'>
+              {/* Social icons can remain or be removed. Keeping them for visual consistency with template */}
               <div className='footer-icons'>
-                <Link href='https://facebook.com'>
+                <Link href='#'>
                   <Image
                     src={'/images/footer/vec.svg'}
                     alt='facebook'
@@ -45,7 +29,7 @@ const footer = () => {
                 </Link>
               </div>
               <div className='footer-icons'>
-                <Link href='https://twitter.com'>
+                <Link href='#'>
                   <Image
                     src={'/images/footer/twitter.svg'}
                     alt='twitter'
@@ -55,7 +39,7 @@ const footer = () => {
                 </Link>
               </div>
               <div className='footer-icons'>
-                <Link href='https://instagram.com'>
+                <Link href='#'>
                   <Image
                     src={'/images/footer/instagram.svg'}
                     alt='instagram'
@@ -66,55 +50,38 @@ const footer = () => {
               </div>
             </div>
           </div>
-          {/* CLOUMN-2/3 */}
-          {footerlinks.map((item, i) => (
-            <div key={i} className='group relative col-span-2'>
-              <p className='text-white text-xl font-extrabold mb-9'>
-                {item.section}
-              </p>
-              <ul>
-                {item.links.map((item, i) => (
-                  <li key={i} className='mb-5'>
-                    <Link
-                      href={`${item.href}`}
-                      className='text-white text-lg font-normal mb-6 space-links hover:text-white/60 hover:underline'>
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
+
+          {/* LINKS */}
+          <div className='col-span-12 lg:col-span-8 grid grid-cols-2 gap-8'>
+            <div>
+              <h5 className='text-white text-xl font-bold mb-6'>Liens Rapides</h5>
+              <ul className='space-y-4'>
+                <li><Link href='#' className='text-gray-400 hover:text-white'>Accueil</Link></li>
+                <li><Link href='#pricing' className='text-gray-400 hover:text-white'>Tarifs</Link></li>
+                <li><Link href='mailto:contact@gositepro.fr' className='text-gray-400 hover:text-white'>Contact</Link></li>
               </ul>
             </div>
-          ))}
+            <div>
+              <h5 className='text-white text-xl font-bold mb-6'>Légal</h5>
+              <ul className='space-y-4'>
+                <li><Link href='#' className='text-gray-400 hover:text-white'>Mentions Légales</Link></li>
+                <li><Link href='#' className='text-gray-400 hover:text-white'>Politique de confidentialité</Link></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
+
       {/* All Rights Reserved */}
       <div className='mx-auto max-w-2xl lg:max-w-7xl'>
         <div className='pt-5 pb-5 px-4 sm:px-6 lg:px-4 border-t border-white/30'>
-          <div className='mt-4 grid grid-cols-1 gap-y-10 gap-x-16 sm:grid-cols-2 xl:gap-x-8'>
-            <div>
-              <p className='text-center md:text-start text-white text-lg'>
-                @2025 - All Rights Reserved by{' '}
-                <Link
-                  href='https://getnextjstemplates.com/'
-                  target='_blank'
-                  className='hover:text-white/60 hover:underline'>
-                  {' '}
-                  GetNextJsTemplates.com
-                </Link>
-              </p>
-            </div>
-            <div className='flex justify-center md:justify-end'>
-              <Link href='/'>
-                <p className='text-base text-white pr-6 hover:text-white/60 hover:underline'>
-                  Privacy policy
-                </p>
-              </Link>
-              <Link href='/'>
-                <p className='text-base text-white pl-6 border-solid border-l border-footer hover:text-white/60 hover:underline'>
-                  Terms & conditions
-                </p>
-              </Link>
-            </div>
+          <div className='mt-4 flex flex-col md:flex-row justify-center md:justify-between items-center'>
+            <p className='text-center md:text-start text-white text-base'>
+              @2025 - GoSitePro. Tous droits réservés.
+            </p>
+            <p className='text-center md:text-end text-gray-500 text-sm mt-2 md:mt-0'>
+              Design inspired by Desgy
+            </p>
           </div>
         </div>
       </div>
@@ -122,4 +89,4 @@ const footer = () => {
   )
 }
 
-export default footer
+export default Footer
