@@ -6,7 +6,7 @@ import { Icon } from '@iconify/react/dist/iconify.js'
 
 const Hero = () => {
   return (
-    <section id='hero' className='relative overflow-hidden z-1 bg-gray-50 dark:bg-gray-900 scroll-mt-32'>
+    <section id='hero' className='relative overflow-hidden z-1 bg-gray-50 dark:bg-gray-900'>
       <div className='container mx-auto pt-24 pb-16 max-w-7xl px-4'>
         <div className='grid grid-cols-12 justify-center items-center gap-8'>
           <div className='col-span-12 lg:col-span-6'>

@@ -8,13 +8,15 @@ import Aoscompo from '@/utils/aos'
 const font = Manrope({ subsets: ['latin'] })
 
 
+import { Toaster } from 'react-hot-toast'
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang='en' suppressHydrationWarning className='scroll-pt-[20px] scroll-smooth'>
       <body className={`${font.className}`}>
         <Aoscompo>
           <Header />
@@ -22,6 +24,7 @@ export default function RootLayout({
           <Footer />
         </Aoscompo>
         <ScrollToTop />
+        <Toaster position='bottom-right' />
       </body>
     </html>
   )

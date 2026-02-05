@@ -38,7 +38,7 @@ const Portfolio = () => {
     const [activeVideo, setActiveVideo] = useState<number | null>(null)
 
     return (
-        <section id='portfolio' className='py-20 bg-white dark:bg-darkmode scroll-mt-32'>
+        <section id='portfolio' className='py-20 bg-white dark:bg-darkmode'>
             <div className='container mx-auto max-w-7xl px-4'>
                 <div className='text-center mb-16'>
                     <h2 className='text-3xl md:text-4xl font-bold mb-4 text-black dark:text-white'>

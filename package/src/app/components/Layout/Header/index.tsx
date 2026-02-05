@@ -66,10 +66,8 @@ const Header: React.FC = () => {
           </nav>
           <div
             className={`flex items-center gap-4 pl-16 lg:border-l border-black/10 duration-300 py-2`}>
-            <Link href='#contact'>
-              <button className='hidden lg:block bg-black text-white px-6 py-2.5 rounded-full font-bold hover:bg-gray-800 transition-colors cursor-pointer'>
-                Démarrer
-              </button>
+            <Link href='/#contact' className='hidden lg:block bg-black text-white px-6 py-2.5 rounded-full font-bold hover:bg-gray-800 transition-colors cursor-pointer'>
+              Démarrer
             </Link>
 
             <button

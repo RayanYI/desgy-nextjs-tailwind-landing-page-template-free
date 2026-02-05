@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { Icon } from '@iconify/react'
+import toast from 'react-hot-toast'
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -15,12 +16,17 @@ const Contact = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        // Placeholder for actual submission logic
-        alert('Merci ! Nous avons bien reçu votre demande. (Démo)')
+        // Here you would normally send the data to an API
+        toast.success('Merci ! Nous avons bien reçu votre demande.')
+        setFormData({
+            name: '',
+            email: '',
+            projectType: 'Vitrine'
+        })
     }
 
     return (
-        <section id='contact' className='py-20 bg-gray-50 dark:bg-gray-900 scroll-mt-32'>
+        <section id='contact' className='py-20 bg-gray-50 dark:bg-gray-900'>
             <div className='container mx-auto px-4 max-w-6xl'>
                 <div className='bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row'>
 
