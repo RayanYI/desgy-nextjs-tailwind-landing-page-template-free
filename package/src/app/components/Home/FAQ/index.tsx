@@ -28,7 +28,7 @@ const faqData = [
 
 const FAQ = () => {
   return (
-    <section id='faq' className='relative py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden'>
+    <section id='faq' className='relative py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden scroll-mt-32'>
       <div className='container mx-auto max-w-7xl px-4'>
         <div className='text-center mb-16'>
           <p className='text-lg font-bold text-blue-600 dark:text-blue-400 mb-2'>Questions Fréquentes</p>
