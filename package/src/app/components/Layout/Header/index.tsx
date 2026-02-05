@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Logo from './Logo'
 import HeaderLink from './Navigation/HeaderLink'
 import MobileHeaderLink from './Navigation/MobileHeaderLink'
+import { Icon } from '@iconify/react'
 
 const Header: React.FC = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
@@ -72,31 +73,30 @@ const Header: React.FC = () => {
 
             <button
               onClick={() => setNavbarOpen(!navbarOpen)}
-              className='block lg:hidden p-2 rounded-lg cursor-pointer'
+              className='block lg:hidden p-2 rounded-lg cursor-pointer text-gray-900 dark:text-white'
               aria-label='Toggle mobile menu'>
-              <span className='block w-6 h-0.5 bg-darkmode'></span>
-              <span className='block w-6 h-0.5 bg-darkmode mt-1.5'></span>
-              <span className='block w-6 h-0.5 bg-darkmode mt-1.5'></span>
+              <Icon icon="ph:list" className="w-8 h-8" />
             </button>
           </div>
         </div>
         {navbarOpen && (
-          <div className='fixed top-0 left-0 w-full h-full bg-black/50 z-40' />
+          <div className='fixed top-0 left-0 w-full h-full bg-black/50 z-40' onClick={() => setNavbarOpen(false)} />
         )}
         <div
           ref={mobileMenuRef}
-          className={`lg:hidden fixed top-0 right-0 h-full w-full bg-darkmode shadow-lg transform transition-transform duration-300 max-w-xs ${navbarOpen ? 'translate-x-0' : 'translate-x-full'
+          className={`lg:hidden fixed top-0 right-0 h-full w-full bg-white dark:bg-gray-900 shadow-lg transform transition-transform duration-300 max-w-xs ${navbarOpen ? 'translate-x-0' : 'translate-x-full'
             } z-50`}>
-          <div className='flex items-center justify-between p-4'>
-            <h2 className='text-lg font-bold text-midnight_text dark:text-midnight_text text-white'>
+          <div className='flex items-center justify-between p-6 border-b border-gray-100 dark:border-gray-800'>
+            <div onClick={() => setNavbarOpen(false)}>
               <Logo />
-            </h2>
+            </div>
 
-            {/*  */}
             <button
               onClick={() => setNavbarOpen(false)}
-              className="bg-[url('/images/closed.svg')] bg-no-repeat bg-contain w-5 h-5 absolute top-0 right-0 mr-8 mt-8 dark:invert cursor-pointer"
-              aria-label='Close menu Modal'></button>
+              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer text-gray-900 dark:text-white"
+              aria-label='Close menu Modal'>
+              <Icon icon="ph:x" className="w-6 h-6" />
+            </button>
           </div>
           <nav className='flex flex-col items-start p-4'>
             <MobileHeaderLink item={{ label: 'Réalisations', href: '/#portfolio' }} />
