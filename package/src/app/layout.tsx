@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'GoSitePro',
     images: [
       {
-        url: '/images/hero/hero-mockup.png',
+        url: '/images/og-image.png',
         width: 1200,
         height: 630,
         alt: 'GoSitePro - Agence Web',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'GoSitePro - Sites Web Performants pour Pros',
     description: 'Votre activité mérite un vrai site professionnel. GoSitePro lance votre site vitrine performant, sécurisé et visible en moins de 7 jours.',
-    images: ['/images/hero/hero-mockup.png'],
+    images: ['/images/og-image.png'],
     creator: '@gositepro',
   },
   robots: {
