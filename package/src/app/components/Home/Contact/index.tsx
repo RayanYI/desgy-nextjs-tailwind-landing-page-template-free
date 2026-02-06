@@ -128,7 +128,7 @@ const Contact = () => {
                                 </div>
                                 <div className='flex items-center gap-2 bg-white/10 rounded-lg px-3 py-2'>
                                     <Icon icon="ph:check-circle-fill" className="w-4 h-4 text-yellow-300" />
-                                    <span className='text-xs font-medium'>+50 clients</span>
+                                    <span className='text-xs font-medium'>Satisfaction 100%</span>
                                 </div>
                             </div>
                         </div>
