@@ -38,6 +38,15 @@ const Pricing = () => {
 
                         <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-2'>Start</h3>
                         <p className='text-gray-500 mb-6'>Idéal pour lancer votre présence en ligne rapidement.</p>
+
+                        {/* Price Anchoring */}
+                        <div className="flex items-center gap-2 mb-1">
+                            <span className="text-lg text-gray-500 line-through decoration-gray-800">990€</span>
+                            <span className="text-xs font-bold text-green-600 bg-green-100 dark:bg-green-900/30 dark:text-green-400 px-2 py-1 rounded-full uppercase tracking-wide">
+                                Offre de lancement
+                            </span>
+                        </div>
+
                         <div className='text-5xl font-bold text-gray-900 dark:text-white mb-2'>
                             690€
                         </div>
@@ -99,6 +108,15 @@ const Pricing = () => {
 
                             <h3 className='text-2xl font-bold text-white mb-2 mt-4'>Croissance</h3>
                             <p className='text-blue-100 mb-6'>L'arme absolue pour convaincre et signer de nouveaux clients.</p>
+
+                            {/* Price Anchoring */}
+                            <div className="flex items-center gap-3 mb-1">
+                                <span className="text-xl text-blue-200 line-through decoration-blue-800">1990€</span>
+                                <span className="text-sm font-bold text-blue-600 bg-white px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                                    Économisez 500€
+                                </span>
+                            </div>
+
                             <div className='text-5xl font-bold text-white mb-2'>
                                 1490€
                             </div>
