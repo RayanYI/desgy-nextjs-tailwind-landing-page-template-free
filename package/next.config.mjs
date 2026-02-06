@@ -9,8 +9,8 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // 👇 C'est ici qu'on force Vercel à laisser ces librairies tranquilles
-  serverExternalPackages: ["jsdom", "html-encoding-sniffer", "@exodus/bytes"],
+  // On garde juste jsdom par sécurité, mais sans les sous-librairies
+  serverExternalPackages: ["jsdom"],
 }
 
 export default nextConfig;
