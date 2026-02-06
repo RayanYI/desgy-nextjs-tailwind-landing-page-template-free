@@ -22,13 +22,13 @@ const Footer = () => {
           {/* Brand Column */}
           <div className='lg:col-span-5'>
             <Link href="/#hero" className="inline-flex items-center gap-2 group">
-              <span className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 transition-colors">
+              <span className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 transition-colors overflow-hidden">
                 <Image
                   src="/images/logo/icon.png"
                   alt="GoSitePro Logo"
-                  width={24}
-                  height={24}
-                  className="w-6 h-6 object-contain"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
                 />
               </span>
               <span className='text-2xl font-bold text-white'>
