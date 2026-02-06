@@ -186,24 +186,34 @@ const Pricing = () => {
 
                         <ul className='space-y-4 mb-8 text-gray-600 dark:text-gray-300'>
                             <li className='flex items-center gap-3'>
-                                <Icon icon="ph:check-circle-fill" className="w-5 h-5 text-gray-400 dark:text-gray-500 flex-shrink-0" />
-                                <span className='text-sm'>Application Web / SaaS</span>
+                                <div className='w-6 h-6 bg-purple-100 dark:bg-purple-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
+                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+                                </div>
+                                <span>Application Web / SaaS</span>
                             </li>
                             <li className='flex items-center gap-3'>
-                                <Icon icon="ph:check-circle-fill" className="w-5 h-5 text-gray-400 dark:text-gray-500 flex-shrink-0" />
-                                <span className='text-sm'>E-commerce Complexe</span>
+                                <div className='w-6 h-6 bg-purple-100 dark:bg-purple-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
+                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+                                </div>
+                                <span>E-commerce Complexe</span>
                             </li>
                             <li className='flex items-center gap-3'>
-                                <Icon icon="ph:check-circle-fill" className="w-5 h-5 text-gray-400 dark:text-gray-500 flex-shrink-0" />
-                                <span className='text-sm'>Espace Membre / Connexion</span>
+                                <div className='w-6 h-6 bg-purple-100 dark:bg-purple-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
+                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+                                </div>
+                                <span>Espace Membre / Connexion</span>
                             </li>
                             <li className='flex items-center gap-3'>
-                                <Icon icon="ph:check-circle-fill" className="w-5 h-5 text-gray-400 dark:text-gray-500 flex-shrink-0" />
-                                <span className='text-sm'>Intégrations API spécifiques</span>
+                                <div className='w-6 h-6 bg-purple-100 dark:bg-purple-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
+                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+                                </div>
+                                <span>Intégrations API spécifiques</span>
                             </li>
                             <li className='flex items-center gap-3'>
-                                <Icon icon="ph:check-circle-fill" className="w-5 h-5 text-gray-400 dark:text-gray-500 flex-shrink-0" />
-                                <span className='text-sm'>Architecture Cloud personnalisée</span>
+                                <div className='w-6 h-6 bg-purple-100 dark:bg-purple-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
+                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+                                </div>
+                                <span>Architecture Cloud personnalisée</span>
                             </li>
                         </ul>
 
