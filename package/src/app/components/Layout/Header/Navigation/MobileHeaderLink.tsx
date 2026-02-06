@@ -3,6 +3,8 @@ import Link from "next/link";
 import { HeaderItem } from "../../../../types/menu";
 import { motion, AnimatePresence } from "framer-motion";
 
+const MotionDiv = motion.div as any;
+
 const MobileHeaderLink: React.FC<{ item: HeaderItem; closeMenu: () => void }> = ({ item, closeMenu }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
 
@@ -47,7 +49,7 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem; closeMenu: () => void }> = 
       </Link>
       <AnimatePresence>
         {submenuOpen && item.submenu && (
-          <motion.div
+          <MotionDiv
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -65,7 +67,7 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem; closeMenu: () => void }> = 
                 </Link>
               ))}
             </div>
-          </motion.div>
+          </MotionDiv>
         )}
       </AnimatePresence>
     </div>
