@@ -3,14 +3,15 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // On dit à Vercel d'ignorer les erreurs de style (Linting) pour construire le site
+  // On garde les configs pour ignorer les erreurs de build
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // On ignore aussi les erreurs strictes de TypeScript
   typescript: {
     ignoreBuildErrors: true,
   },
+  // On dit à Next.js de ne pas essayer de bundler ces librairies capricieuses
+  serverExternalPackages: ["jsdom"],
 }
 
 export default nextConfig;
