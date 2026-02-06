@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Icon } from '@iconify/react'
 
 const Footer = () => {
@@ -21,8 +22,14 @@ const Footer = () => {
           {/* Brand Column */}
           <div className='lg:col-span-5'>
             <Link href="/#hero" className="inline-flex items-center gap-2 group">
-              <span className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/25">
-                <Icon icon="ph:code-bold" className="w-5 h-5 text-white" />
+              <span className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 transition-colors">
+                <Image
+                  src="/images/logo/icon.png"
+                  alt="GoSitePro Logo"
+                  width={24}
+                  height={24}
+                  className="w-6 h-6 object-contain"
+                />
               </span>
               <span className='text-2xl font-bold text-white'>
                 GoSite<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Pro</span>
