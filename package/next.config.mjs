@@ -9,7 +9,13 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  serverExternalPackages: ["jsdom", "isomorphic-dompurify"],
+  //LA LISTE COMPLÈTE (On met tout le monde d'accord)
+  serverExternalPackages: [
+    "jsdom",
+    "isomorphic-dompurify",
+    "html-encoding-sniffer",
+    "@exodus/bytes"
+  ],
 }
 
 export default nextConfig;
