@@ -1,6 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
 import Hero from '@/app/components/Home/Hero'
+import TechStack from '@/app/components/Home/TechStack'
 import Portfolio from '@/app/components/Home/Portfolio'
 import Values from '@/app/components/Home/Values'
 import Pricing from '@/app/components/Home/Pricing'
@@ -47,6 +48,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
+      <TechStack />
       <Portfolio />
       <Values />
       <Pricing />
