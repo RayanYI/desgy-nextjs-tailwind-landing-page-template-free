@@ -83,6 +83,15 @@ const Pricing = () => {
                                 </div>
                                 Mise en ligne incluse
                             </li>
+
+                            <div className='my-4 border-t border-gray-100 dark:border-gray-700'></div>
+
+                            <li className='flex items-center gap-3 bg-green-50 dark:bg-green-900/20 p-3 rounded-xl border border-green-100 dark:border-green-800/30'>
+                                <Icon icon="ph:gift-fill" className="w-5 h-5 text-green-600 dark:text-green-400" />
+                                <span className='font-bold text-green-700 dark:text-green-300 text-sm'>
+                                    BONUS : 1 Mois Maintenance
+                                </span>
+                            </li>
                         </ul>
 
                         <Link href="#contact" className='mt-auto'>
