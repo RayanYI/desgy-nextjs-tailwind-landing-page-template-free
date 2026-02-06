@@ -8,7 +8,7 @@ const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        projectType: 'Vitrine'
+        projectType: 'Croissance'
     })
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [focusedField, setFocusedField] = useState<string | null>(null)
@@ -34,7 +34,7 @@ const Contact = () => {
                 setFormData({
                     name: '',
                     email: '',
-                    projectType: 'Vitrine'
+                    projectType: 'Croissance'
                 })
             } else {
                 toast.error(result.message || "Erreur lors de l'envoi.")
@@ -203,9 +203,9 @@ const Contact = () => {
                                         onChange={handleChange}
                                         disabled={isSubmitting}
                                     >
-                                        <option value='Start'>Offre Start — 490€</option>
-                                        <option value='Vitrine'>Offre Vitrine — 890€</option>
-                                        <option value='Custom'>Projet Custom — Sur mesure</option>
+                                        <option value='Start'>Offre Start — 690€</option>
+                                        <option value='Croissance'>Offre Croissance — 1490€</option>
+                                        <option value='Sur-Mesure'>Projet Sur Mesure — Sur Devis</option>
                                     </select>
                                     <div className='absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500'>
                                         <Icon icon="ph:caret-down-bold" className="w-5 h-5" />
