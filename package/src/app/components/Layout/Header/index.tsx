@@ -56,8 +56,16 @@ const Header: React.FC = () => {
   useEffect(() => {
     if (navbarOpen) {
       document.body.style.overflow = 'hidden'
+      document.documentElement.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
+    }
+
+    // Cleanup function to ensure scroll is restored if component unmounts
+    return () => {
+      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
     }
   }, [navbarOpen])
 
