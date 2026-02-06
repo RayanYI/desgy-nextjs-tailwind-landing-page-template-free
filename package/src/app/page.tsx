@@ -23,7 +23,7 @@ export default function Home() {
     url: 'https://gositepro.fr',
     telephone: '+33622412515',
     email: 'contact@gositepro.fr',
-    priceRange: '490€ - 890€',
+    priceRange: '690€ - 1490€',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'FR',

@@ -22,11 +22,11 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     url: 'https://gositepro.fr',
     title: 'GoSitePro - Sites Web Performants pour Pros',
-    description: 'Votre activité mérite un vrai site professionnel. Lancement rapide, design premium et performance maximale.',
+    description: 'Votre activité mérite un vrai site professionnel. GoSitePro lance votre site vitrine performant, sécurisé et visible en moins de 7 jours.',
     siteName: 'GoSitePro',
     images: [
       {
-        url: '/images/og-image.jpg', // We should ensure this image exists or use the hero image
+        url: '/images/hero/hero-mockup.png',
         width: 1200,
         height: 630,
         alt: 'GoSitePro - Agence Web',
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'GoSitePro - Sites Web Performants pour Pros',
-    description: 'Votre activité mérite un vrai site professionnel. Lancement rapide, design premium et performance maximale.',
-    images: ['/images/og-image.jpg'],
+    description: 'Votre activité mérite un vrai site professionnel. GoSitePro lance votre site vitrine performant, sécurisé et visible en moins de 7 jours.',
+    images: ['/images/hero/hero-mockup.png'],
     creator: '@gositepro',
   },
   robots: {
