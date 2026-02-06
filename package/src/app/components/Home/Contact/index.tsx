@@ -13,6 +13,20 @@ const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [focusedField, setFocusedField] = useState<string | null>(null)
 
+    // Fix: Sync state with browser auto-fill/restore on mount
+    React.useEffect(() => {
+        const nameInput = document.getElementById('name') as HTMLInputElement
+        const emailInput = document.getElementById('email') as HTMLInputElement
+
+        if (nameInput?.value || emailInput?.value) {
+            setFormData(prev => ({
+                ...prev,
+                name: nameInput?.value || prev.name,
+                email: emailInput?.value || prev.email
+            }))
+        }
+    }, [])
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
