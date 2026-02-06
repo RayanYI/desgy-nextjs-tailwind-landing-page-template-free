@@ -20,7 +20,7 @@ const faqData = [
   },
   {
     question: "Qui s'occupe de la maintenance ?",
-    answer: "Nous offrons 1 mois de maintenance pour s'assurer que tout roule. Ensuite, le site est conçu pour être stable et sécurisé sans intervention constante. Si vous avez besoin de modifications, nous proposons des forfaits d'intervention à la demande.",
+    answer: "Nous offrons 1 à 3 mois de maintenance selon l'offre choisie pour s'assurer que tout roule. Ensuite, le site est conçu pour être stable et sécurisé sans intervention constante. Si vous avez besoin de modifications, nous proposons des forfaits d'intervention à la demande.",
     icon: "ph:wrench-duotone"
   }
 ]
