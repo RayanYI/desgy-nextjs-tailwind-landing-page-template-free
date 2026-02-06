@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react'
 const faqData = [
   {
     question: "Combien ça coûte réellement ?",
-    answer: "Tout est affiché : 490€ pour une page ou 890€ pour un site complet. Pas d'abonnement mensuel caché pour la création. Seul l'hébergement (environ 50€/an) reste à votre charge après la première année offerte.",
+    answer: "Tout est affiché : 690€ pour une page ou 1490€ pour un site complet. Pas d'abonnement mensuel caché pour la création. Seul l'hébergement (environ 50€/an) reste à votre charge après la première année offerte.",
     icon: "ph:currency-eur-duotone"
   },
   {
