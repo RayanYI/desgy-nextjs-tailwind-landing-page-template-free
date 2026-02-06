@@ -27,6 +27,11 @@ const Contact = () => {
             data.append('email', formData.email)
             data.append('projectType', formData.projectType)
 
+            // Honeypot connection
+            const form = e.currentTarget as HTMLFormElement
+            const honeypot = (form.elements.namedItem('_check_val') as HTMLInputElement)?.value
+            if (honeypot) data.append('_check_val', honeypot)
+
             const result = await sendEmail(data)
 
             if (result.success) {

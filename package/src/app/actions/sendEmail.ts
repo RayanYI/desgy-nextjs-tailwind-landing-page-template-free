@@ -43,9 +43,23 @@ export async function sendEmail(formData: FormData): Promise<EmailState> {
     const { name, email, projectType } = result.data
 
     // 3. Sanitization (Defense in Depth)
-    const cleanName = name
-    const cleanEmail = email
-    const cleanProjectType = projectType
+    // Replacement: Lightweight HTML escaping (Zero dep)
+    const escapeHtml = (unsafe: string) => {
+        return unsafe.replace(/[&<"'>]/g, (match) => {
+            const escapeMap: Record<string, string> = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            }
+            return escapeMap[match]
+        })
+    }
+
+    const cleanName = escapeHtml(name)
+    const cleanEmail = email // Validated by Zod .email(), strictly safe.
+    const cleanProjectType = escapeHtml(projectType)
 
     const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS } = process.env
 
