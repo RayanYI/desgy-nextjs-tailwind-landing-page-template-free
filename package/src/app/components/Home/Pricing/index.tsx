@@ -34,7 +34,7 @@ const Pricing = () => {
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch'>
                     {/* Offer 1: Start (Clean & Pro) */}
                     <div className='group bg-white dark:bg-gray-800 rounded-3xl p-8 pb-10 shadow-lg border border-gray-100 dark:border-gray-700 relative hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full'>
-                        <div className='absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gray-100 to-transparent dark:from-gray-700 rounded-bl-[100px] -z-10 group-hover:scale-150 transition-transform duration-500' />
+                        <div className='absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-100 to-transparent dark:from-green-900/30 rounded-bl-[100px] -z-10 group-hover:scale-150 transition-transform duration-500' />
 
                         <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-2'>Start</h3>
                         <p className='text-gray-500 mb-6'>Idéal pour lancer votre présence en ligne rapidement.</p>
