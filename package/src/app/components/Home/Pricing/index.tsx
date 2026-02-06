@@ -57,7 +57,7 @@ const Pricing = () => {
                                 <div className='w-6 h-6 bg-green-100 dark:bg-green-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
                                     <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-green-600 dark:text-green-400" />
                                 </div>
-                                Site One-Page professionnel
+                                Page unique professionnelle prête à convertir
                             </li>
                             <li className='flex items-center gap-3'>
                                 <div className='w-6 h-6 bg-green-100 dark:bg-green-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
@@ -75,7 +75,7 @@ const Pricing = () => {
                                 <div className='w-6 h-6 bg-green-100 dark:bg-green-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
                                     <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-green-600 dark:text-green-400" />
                                 </div>
-                                Optimisation mobile (Responsive)
+                                Expérience parfaite sur mobile
                             </li>
                             <li className='flex items-center gap-3'>
                                 <div className='w-6 h-6 bg-green-100 dark:bg-green-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
@@ -107,7 +107,7 @@ const Pricing = () => {
                             </div>
 
                             <h3 className='text-2xl font-bold text-white mb-2 mt-4'>Croissance</h3>
-                            <p className='text-blue-100 mb-6'>L'arme absolue pour convaincre et signer de nouveaux clients.</p>
+                            <p className='text-blue-100 mb-6'>L’offre complète pour transformer vos visiteurs en clients</p>
 
                             {/* Price Anchoring */}
                             <div className="flex items-center gap-3 mb-1">
@@ -123,47 +123,50 @@ const Pricing = () => {
                             <p className='text-sm text-blue-200 mb-8'>Paiement unique</p>
 
                             <ul className='space-y-4 mb-8 text-white'>
-                                <li className='flex items-center gap-3'>
-                                    <div className='w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0'>
-                                        <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-yellow-400" />
+                                <li className='flex items-start gap-3'>
+                                    <div className='mt-0.5 bg-white/20 p-1 rounded-full'>
+                                        <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-white" />
                                     </div>
-                                    <strong>Site Multi-pages (Accueil + 4)</strong>
+                                    <span className='font-medium'>Structure complète pour présenter votre activité et convertir</span>
                                 </li>
-                                <li className='flex items-center gap-3'>
-                                    <div className='w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0'>
-                                        <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-yellow-400" />
+                                <li className='flex items-start gap-3'>
+                                    <div className='mt-0.5 bg-white/20 p-1 rounded-full'>
+                                        <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-white" />
                                     </div>
-                                    Optimisation SEO avancée
+                                    <span className='font-medium'>Optimisation SEO avancée</span>
                                 </li>
-                                <li className='flex items-center gap-3'>
-                                    <div className='w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0'>
-                                        <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-yellow-400" />
+                                <li className='flex items-start gap-3'>
+                                    <div className='mt-0.5 bg-white/20 p-1 rounded-full'>
+                                        <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-white" />
                                     </div>
-                                    Blog / Actualités administrable
+                                    <span className='font-medium'>Espace Blog pour améliorer votre visibilité Google</span>
                                 </li>
-                                <li className='flex items-center gap-3'>
-                                    <div className='w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0'>
-                                        <Icon icon="ph:rocket-launch-bold" className="w-3.5 h-3.5 text-yellow-400" />
+                                <li className='flex items-start gap-3'>
+                                    <div className='mt-0.5 bg-white/20 p-1 rounded-full'>
+                                        <Icon icon="ph:rocket-launch-bold" className="w-3.5 h-3.5 text-white" />
                                     </div>
-                                    Vitesse Extrême ({'<'} 1s)
+                                    <span className='font-medium'>Chargement ultra-rapide pour une expérience premium</span>
                                 </li>
-                                <li className='flex items-center gap-3'>
-                                    <div className='w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0'>
-                                        <Icon icon="ph:gift-fill" className="w-3.5 h-3.5 text-yellow-400" />
+                                <li className='flex items-start gap-3'>
+                                    <div className='mt-0.5 bg-white/20 p-1 rounded-full'>
+                                        <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-white" />
                                     </div>
-                                    <span>Google Map & Analytics</span>
+                                    <span className='font-medium'>Suivi des visiteurs & intégration Google</span>
                                 </li>
-                                <li className='flex items-center gap-3'>
-                                    <div className='w-6 h-6 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0'>
-                                        <Icon icon="ph:gift-fill" className="w-3.5 h-3.5 text-yellow-400" />
-                                    </div>
-                                    <strong className="text-yellow-300">BONUS : 3 Mois Maintenance</strong>
+
+                                <div className='my-4 border-t border-white/20'></div>
+
+                                <li className='flex items-center gap-3 bg-white/10 p-3 rounded-xl border border-white/10'>
+                                    <Icon icon="ph:gift-fill" className="w-5 h-5 text-yellow-300" />
+                                    <span className='font-bold text-yellow-100 text-sm'>
+                                        BONUS : 3 Mois Maintenance
+                                    </span>
                                 </li>
                             </ul>
 
                             <Link href="#contact">
                                 <button className='w-full py-4 px-6 rounded-full bg-white text-blue-700 font-bold hover:bg-gray-100 transition-all shadow-lg cursor-pointer hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2'>
-                                    Choisir l'offre Croissance
+                                    Je choisis l’offre Croissance
                                     <Icon icon="ph:arrow-right-bold" className="w-5 h-5" />
                                 </button>
                             </Link>
@@ -183,40 +186,30 @@ const Pricing = () => {
 
                         <ul className='space-y-4 mb-8 text-gray-600 dark:text-gray-300'>
                             <li className='flex items-center gap-3'>
-                                <div className='w-6 h-6 bg-purple-100 dark:bg-purple-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
-                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
-                                </div>
-                                Application Web / SaaS
+                                <Icon icon="ph:check-circle-fill" className="w-5 h-5 text-gray-400 dark:text-gray-500 flex-shrink-0" />
+                                <span className='text-sm'>Application Web / SaaS</span>
                             </li>
                             <li className='flex items-center gap-3'>
-                                <div className='w-6 h-6 bg-purple-100 dark:bg-purple-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
-                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
-                                </div>
-                                E-commerce Complexe
+                                <Icon icon="ph:check-circle-fill" className="w-5 h-5 text-gray-400 dark:text-gray-500 flex-shrink-0" />
+                                <span className='text-sm'>E-commerce Complexe</span>
                             </li>
                             <li className='flex items-center gap-3'>
-                                <div className='w-6 h-6 bg-purple-100 dark:bg-purple-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
-                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
-                                </div>
-                                Espace Membre / Connexion
+                                <Icon icon="ph:check-circle-fill" className="w-5 h-5 text-gray-400 dark:text-gray-500 flex-shrink-0" />
+                                <span className='text-sm'>Espace Membre / Connexion</span>
                             </li>
                             <li className='flex items-center gap-3'>
-                                <div className='w-6 h-6 bg-purple-100 dark:bg-purple-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
-                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
-                                </div>
-                                Intégrations API spécifiques
+                                <Icon icon="ph:check-circle-fill" className="w-5 h-5 text-gray-400 dark:text-gray-500 flex-shrink-0" />
+                                <span className='text-sm'>Intégrations API spécifiques</span>
                             </li>
                             <li className='flex items-center gap-3'>
-                                <div className='w-6 h-6 bg-purple-100 dark:bg-purple-900/40 rounded-full flex items-center justify-center flex-shrink-0'>
-                                    <Icon icon="ph:check-bold" className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
-                                </div>
-                                Architecture Cloud personnalisée
+                                <Icon icon="ph:check-circle-fill" className="w-5 h-5 text-gray-400 dark:text-gray-500 flex-shrink-0" />
+                                <span className='text-sm'>Architecture Cloud personnalisée</span>
                             </li>
                         </ul>
 
                         <Link href="#contact">
                             <button className='w-full py-4 px-6 rounded-full border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-white font-semibold hover:border-purple-600 hover:text-purple-600 dark:hover:border-purple-400 dark:hover:text-purple-400 transition-all cursor-pointer group-hover:bg-purple-50 dark:group-hover:bg-purple-900/20'>
-                                Demander une étude
+                                Demander une étude personnalisée
                             </button>
                         </Link>
                     </div>
