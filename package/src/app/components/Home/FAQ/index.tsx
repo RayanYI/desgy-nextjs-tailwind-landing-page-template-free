@@ -5,22 +5,40 @@ import { Icon } from '@iconify/react'
 const faqData = [
   {
     question: "Combien ça coûte réellement ?",
-    answer: "Tout est affiché : 690€ pour une page ou 1490€ pour un site complet. Pas d'abonnement mensuel caché pour la création. Seul l'hébergement (environ 50€/an) reste à votre charge après la première année offerte.",
+    answer: `Tout est transparent.
+
+690€ pour une page professionnelle ou 1490€ pour un site complet.
+Aucun abonnement caché pour la création.
+
+Seul l’hébergement (environ 50€/an) reste à votre charge après la première année offerte.`,
     icon: "ph:currency-eur-duotone"
   },
   {
-    question: "Combien de temps avant d'être en ligne ?",
-    answer: "Une fois que nous avons vos contenus (textes, photos), nous nous engageons à livrer une première version en 5 jours ouvrés. La mise en ligne définitive se fait sous 7 jours maximum.",
+    question: "Combien de temps avant d’être en ligne ?",
+    answer: `Dès réception de vos contenus (textes et photos), une première version de votre site est livrée sous 5 jours ouvrés.
+
+La mise en ligne définitive intervient sous 7 jours maximum.
+
+Rapide, clair, efficace.`,
     icon: "ph:clock-countdown-duotone"
   },
   {
     question: "Est-ce que je suis propriétaire de mon site ?",
-    answer: "OUI. À 100%. Contrairement à certaines plateformes, vous possédez votre nom de domaine et tous les fichiers de votre site. Vous êtes libre de partir quand vous voulez.",
+    answer: `Oui. À 100%.
+
+Vous êtes propriétaire de votre nom de domaine et de l’intégralité de votre site.
+Aucune dépendance à une plateforme. Aucune contrainte.
+
+Vous êtes libre, totalement.`,
     icon: "ph:key-duotone"
   },
   {
-    question: "Qui s'occupe de la maintenance ?",
-    answer: "Nous offrons 1 à 3 mois de maintenance selon l'offre choisie pour s'assurer que tout roule. Ensuite, le site est conçu pour être stable et sécurisé sans intervention constante. Si vous avez besoin de modifications, nous proposons des forfaits d'intervention à la demande.",
+    question: "Qui s’occupe de la maintenance ?",
+    answer: `Nous offrons de 1 à 3 mois de maintenance selon l’offre choisie, pour garantir un démarrage serein.
+
+Ensuite, votre site est conçu pour être stable, sécurisé et autonome, sans intervention constante.
+
+Et si vous souhaitez des évolutions, nous proposons des interventions à la demande.`,
     icon: "ph:wrench-duotone"
   }
 ]
@@ -104,7 +122,7 @@ const FAQ = () => {
                     }`}
                 >
                   <div className='px-6 pb-6 pl-[88px]'>
-                    <p className='text-base text-gray-600 dark:text-gray-300 leading-relaxed'>
+                    <p className='text-base text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line'>
                       {item.answer}
                     </p>
                   </div>
