@@ -33,7 +33,7 @@ const Pricing = () => {
 
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch'>
                     {/* Offer 1: Start (Clean & Pro) */}
-                    <div className='group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 relative hover:shadow-2xl hover:-translate-y-2 transition-all duration-500'>
+                    <div className='group bg-white dark:bg-gray-800 rounded-3xl p-8 pb-10 shadow-lg border border-gray-100 dark:border-gray-700 relative hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full'>
                         <div className='absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gray-100 to-transparent dark:from-gray-700 rounded-bl-[100px] -z-10 group-hover:scale-150 transition-transform duration-500' />
 
                         <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-2'>Start</h3>
@@ -85,7 +85,7 @@ const Pricing = () => {
                             </li>
                         </ul>
 
-                        <Link href="#contact">
+                        <Link href="#contact" className='mt-auto'>
                             <button className='w-full py-4 px-6 rounded-full border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-white font-semibold hover:border-blue-600 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400 transition-all cursor-pointer group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20'>
                                 Lancer ma présence
                             </button>
@@ -100,7 +100,7 @@ const Pricing = () => {
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
                         </div>
 
-                        <div className='relative bg-gradient-to-b from-blue-600 to-blue-800 rounded-3xl p-8 shadow-2xl h-full'>
+                        <div className='relative bg-gradient-to-b from-blue-600 to-blue-800 rounded-3xl p-8 shadow-2xl h-full flex flex-col'>
                             <div className='absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-yellow-400 to-orange-400 text-black text-sm font-bold px-6 py-2 rounded-full shadow-lg uppercase tracking-wider flex items-center gap-2 whitespace-nowrap'>
                                 <Icon icon="ph:star-fill" className="w-4 h-4" />
                                 LE CHOIX DES PROS
@@ -164,7 +164,7 @@ const Pricing = () => {
                                 </li>
                             </ul>
 
-                            <Link href="#contact">
+                            <Link href="#contact" className='mt-auto'>
                                 <button className='w-full py-4 px-6 rounded-full bg-white text-blue-700 font-bold hover:bg-gray-100 transition-all shadow-lg cursor-pointer hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2'>
                                     Je choisis l’offre Croissance
                                     <Icon icon="ph:arrow-right-bold" className="w-5 h-5" />
@@ -174,7 +174,7 @@ const Pricing = () => {
                     </div>
 
                     {/* Offer 3: Sur-Mesure (High End - formerly Custom) */}
-                    <div className='group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 relative hover:shadow-2xl hover:-translate-y-2 transition-all duration-500'>
+                    <div className='group bg-white dark:bg-gray-800 rounded-3xl p-8 pb-10 shadow-lg border border-gray-100 dark:border-gray-700 relative hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full'>
                         <div className='absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100 to-transparent dark:from-purple-900/30 rounded-bl-[100px] -z-10 group-hover:scale-150 transition-transform duration-500' />
 
                         <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-2'>Sur-Mesure</h3>
@@ -217,7 +217,7 @@ const Pricing = () => {
                             </li>
                         </ul>
 
-                        <Link href="#contact">
+                        <Link href="#contact" className='mt-auto'>
                             <button className='w-full py-4 px-6 rounded-full border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-white font-semibold hover:border-purple-600 hover:text-purple-600 dark:hover:border-purple-400 dark:hover:text-purple-400 transition-all cursor-pointer group-hover:bg-purple-50 dark:group-hover:bg-purple-900/20'>
                                 Demander une étude personnalisée
                             </button>
