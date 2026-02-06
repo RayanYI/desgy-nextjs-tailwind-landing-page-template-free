@@ -10,6 +10,7 @@ interface Project {
     image: string
     videoId: string // Kept for later
     color: string
+    link?: string
 }
 
 const projects: Project[] = [
@@ -20,6 +21,7 @@ const projects: Project[] = [
         image: '/images/portfolio/koda.png',
         videoId: 'dQw4w9WgXcQ',
         color: 'bg-emerald-500',
+        link: 'https://www.kodas.works/fr'
     },
     {
         title: 'Al Jabeerah',
@@ -61,64 +63,96 @@ const Portfolio = () => {
                 </div>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10'>
-                    {projects.map((project, index) => (
-                        <div key={index} className='group bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-700 flex flex-col'>
-                            {/* Media Area */}
-                            <div className='relative h-64 w-full overflow-hidden'>
-                                {/* Image Version */}
-                                <Image
-                                    src={project.image}
-                                    alt={project.title}
-                                    fill
-                                    className='object-cover transition-transform duration-700 group-hover:scale-110'
-                                />
-                                <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+                    {projects.map((project, index) => {
+                        const CardContent = () => (
+                            <>
+                                {/* Media Area */}
+                                <div className='relative h-64 w-full overflow-hidden'>
+                                    {/* Image Version */}
+                                    <Image
+                                        src={project.image}
+                                        alt={project.title}
+                                        fill
+                                        className='object-cover transition-transform duration-700 group-hover:scale-110'
+                                    />
+                                    <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
 
-                                {/* Video Logic Kept in Comment
-                                <div className='relative h-full w-full cursor-pointer' onClick={() => setActiveVideo(index)}>
-                                    {activeVideo === index ? (
-                                        <iframe
-                                            width='100%'
-                                            height='100%'
-                                            src={`https://www.youtube.com/embed/${project.videoId}?autoplay=1`}
-                                            title={project.title}
-                                            frameBorder='0'
-                                            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                                            allowFullScreen
-                                            className='absolute inset-0 w-full h-full'
-                                        ></iframe>
-                                    ) : (
-                                        <>
-                                            <div className={`absolute inset-0 ${project.color} opacity-10 group-hover:opacity-20 transition-opacity`}></div>
-                                            <div className='absolute inset-0 flex items-center justify-center'>
-                                                <div className='w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform'>
-                                                    <svg className='w-6 h-6 text-gray-900 ml-1' fill='currentColor' viewBox='0 0 24 24'>
-                                                        <path d='M8 5v14l11-7z' />
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </>
+                                    {/* External Link Icon Overlay if link exists */}
+                                    {project.link && (
+                                        <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                            <Icon icon="ph:arrow-square-out-bold" className="w-5 h-5 text-gray-900 dark:text-white" />
+                                        </div>
                                     )}
+
+                                    {/* Video Logic Kept in Comment
+                                    <div className='relative h-full w-full cursor-pointer' onClick={() => setActiveVideo(index)}>
+                                        {activeVideo === index ? (
+                                            <iframe
+                                                width='100%'
+                                                height='100%'
+                                                src={`https://www.youtube.com/embed/${project.videoId}?autoplay=1`}
+                                                title={project.title}
+                                                frameBorder='0'
+                                                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                                                allowFullScreen
+                                                className='absolute inset-0 w-full h-full'
+                                            ></iframe>
+                                        ) : (
+                                            <>
+                                                <div className={`absolute inset-0 ${project.color} opacity-10 group-hover:opacity-20 transition-opacity`}></div>
+                                                <div className='absolute inset-0 flex items-center justify-center'>
+                                                    <div className='w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform'>
+                                                        <svg className='w-6 h-6 text-gray-900 ml-1' fill='currentColor' viewBox='0 0 24 24'>
+                                                            <path d='M8 5v14l11-7z' />
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </>
+                                        )}
+                                    </div>
+                                    */}
                                 </div>
-                                */}
-                            </div>
 
-                            {/* Content Area */}
-                            <div className='p-8 flex-1 flex flex-col'>
-                                <div className='mb-4'>
-                                    <span className={`text-[10px] uppercase tracking-widest font-black px-3 py-1 rounded-full text-white ${project.color}`}>
-                                        {project.category}
-                                    </span>
+                                {/* Content Area */}
+                                <div className='p-8 flex-1 flex flex-col'>
+                                    <div className='mb-4'>
+                                        <span className={`text-[10px] uppercase tracking-widest font-black px-3 py-1 rounded-full text-white ${project.color}`}>
+                                            {project.category}
+                                        </span>
+                                    </div>
+                                    <div className="flex items-center gap-2 mb-3">
+                                        <h3 className='text-xl lg:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors'>{project.title}</h3>
+                                        {project.link && (
+                                            <Icon icon="ph:arrow-right-bold" className="w-5 h-5 text-blue-600 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                                        )}
+                                    </div>
+                                    <p className='text-gray-600 dark:text-gray-400 text-sm leading-relaxed'>
+                                        {project.description}
+                                    </p>
                                 </div>
-                                <h3 className='text-xl lg:text-2xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors'>{project.title}</h3>
-                                <p className='text-gray-600 dark:text-gray-400 text-sm leading-relaxed'>
-                                    {project.description}
-                                </p>
+                            </>
+                        )
 
+                        if (project.link) {
+                            return (
+                                <a
+                                    key={index}
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className='group bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-700 flex flex-col cursor-pointer'
+                                >
+                                    <CardContent />
+                                </a>
+                            )
+                        }
 
+                        return (
+                            <div key={index} className='group bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-700 flex flex-col'>
+                                <CardContent />
                             </div>
-                        </div>
-                    ))}
+                        )
+                    })}
                 </div>
             </div>
         </section>
