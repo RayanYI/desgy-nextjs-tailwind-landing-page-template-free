@@ -148,9 +148,6 @@ const Footer = () => {
             <p className='text-sm text-gray-500 text-center md:text-left'>
               © {currentYear} GoSitePro. Tous droits réservés.
             </p>
-            <p className='text-sm text-gray-500 flex items-center gap-1'>
-              Fait avec <Icon icon="ph:heart-fill" className="w-4 h-4 text-red-500 animate-pulse" /> en France
-            </p>
           </div>
         </div>
       </div>
