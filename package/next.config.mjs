@@ -9,8 +9,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // On garde juste jsdom par sécurité, mais sans les sous-librairies
-  serverExternalPackages: ["jsdom"],
+  serverExternalPackages: ["jsdom", "isomorphic-dompurify"],
 }
 
 export default nextConfig;
