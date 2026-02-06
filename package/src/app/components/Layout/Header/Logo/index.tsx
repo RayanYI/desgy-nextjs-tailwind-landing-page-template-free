@@ -12,7 +12,9 @@ const Logo: React.FC = () => {
         className='object-contain h-10 w-auto'
         priority
       />
-      <span className='text-2xl font-bold text-gray-900 dark:text-white'>GoSitePro</span>
+      <span className='text-2xl font-bold text-gray-900 dark:text-white'>
+        GoSite<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Pro</span>
+      </span>
     </Link>
   )
 }
