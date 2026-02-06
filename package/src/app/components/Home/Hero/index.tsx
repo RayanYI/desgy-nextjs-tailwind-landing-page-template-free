@@ -119,7 +119,7 @@ const Hero = () => {
               Arrêtez de perdre des clients. GoSitePro lance votre site vitrine performant, sécurisé et visible en moins de 7 jours.
             </MotionP>
 
-            <MotionDiv variants={itemVariants} className='flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12'>
+            <MotionDiv variants={itemVariants} className='flex flex-col sm:flex-row gap-4 items-center lg:items-start justify-center lg:justify-start mb-12'>
               <Link href='#contact'>
                 <button className='group relative bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-base sm:text-lg font-semibold py-4 px-8 rounded-full transition-all shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 transform hover:-translate-y-1 cursor-pointer overflow-hidden'>
                   <span className="relative z-10 flex items-center gap-2">
