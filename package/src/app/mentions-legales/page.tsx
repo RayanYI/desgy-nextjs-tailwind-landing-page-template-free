@@ -31,7 +31,7 @@ const MentionsLegales = () => {
                             </h2>
                             <p className="text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl border border-gray-100 dark:border-gray-700">
                                 Le site <strong>GoSitePro</strong> est édité par :<br /><br />
-                                <span className="block mb-1"><strong>Rayan Rousfi</strong></span>
+                                <span className="block mb-1"><strong>Rayan Yousfi</strong></span>
                                 <span className="block mb-1 text-sm text-gray-500">(Entrepreneur Individuel)</span>
                                 <span className="block mb-1"><strong>contact@gositepro.fr</strong></span>
                                 <span className="block"><strong>06 22 41 25 15</strong></span>
