@@ -55,6 +55,8 @@ export const metadata: Metadata = {
 
 import { Toaster } from 'react-hot-toast'
 
+import { Analytics } from "@vercel/analytics/next"
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -67,6 +69,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <Analytics />
         </Aoscompo>
         <Toaster position='bottom-right' />
       </body>
