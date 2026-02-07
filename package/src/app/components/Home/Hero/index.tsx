@@ -92,7 +92,7 @@ const Hero = () => {
             <MotionH1 variants={itemVariants} className='text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-[1.1] mb-8 text-center lg:text-start'>
               Votre activité mérite un vrai{' '}
               <span className='relative inline-block'>
-                <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-[length:200%_auto] animate-gradient'>
+                <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600'>
                   site professionnel.
                 </span>
                 <svg className="absolute -bottom-3 left-0 w-full" viewBox="0 0 200 8" fill="none">
@@ -213,16 +213,7 @@ const Hero = () => {
         </MotionDiv>
       </div>
 
-      <style jsx>{`
-        @keyframes gradient {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        .animate-gradient {
-          animation: gradient 3s ease infinite;
-        }
-      `}</style>
+
     </section>
   )
 }
