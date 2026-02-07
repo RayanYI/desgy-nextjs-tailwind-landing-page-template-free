@@ -199,7 +199,7 @@ const Hero = () => {
               <div className="absolute -inset-[2px] bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 rounded-3xl opacity-50 blur-sm group-hover:opacity-75 transition-opacity" />
               <div className="absolute inset-0 bg-white dark:bg-gray-900 rounded-3xl overflow-hidden">
                 <Image
-                  src='/images/hero/hero-mockup.png'
+                  src='/images/hero/hero-mockup.webp'
                   alt='GoSitePro - Site Web sur Laptop et Mobile'
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

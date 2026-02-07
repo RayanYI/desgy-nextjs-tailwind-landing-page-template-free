@@ -5,7 +5,7 @@ const Logo: React.FC = () => {
   return (
     <Link href='/#hero' className='flex items-center gap-3'>
       <Image
-        src='/images/logo/gositeprologo.png'
+        src='/images/logo/gositeprologo.webp'
         alt='GoSitePro Logo'
         width={40}
         height={40}
