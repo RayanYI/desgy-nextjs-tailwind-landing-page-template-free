@@ -118,7 +118,7 @@ const FAQ = () => {
 
                 {/* Answer */}
                 <div
-                  className={`grid transition-all duration-300 ease-in-out ${isOpen
+                  className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out will-change-[grid-template-rows] ${isOpen
                     ? 'grid-rows-[1fr] opacity-100'
                     : 'grid-rows-[0fr] opacity-0'
                     }`}
