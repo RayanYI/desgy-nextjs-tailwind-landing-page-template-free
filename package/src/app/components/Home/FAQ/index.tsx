@@ -116,20 +116,14 @@ const FAQ = () => {
                   </div>
                 </button>
 
-                {/* Answer */}
-                <div
-                  className={`overflow-hidden transition-all duration-300 ease-out ${isOpen
-                    ? 'max-h-96 opacity-100'
-                    : 'max-h-0 opacity-0'
-                    }`}
-                  style={{ willChange: 'max-height, opacity' }}
-                >
-                  <div className='px-6 pb-6 pl-[88px]'>
+                {/* Answer - Simple toggle sans animation lourde */}
+                {isOpen && (
+                  <div className='px-6 pb-6 pl-[88px] animate-fadeIn'>
                     <p className='text-base text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line'>
                       {item.answer}
                     </p>
                   </div>
-                </div>
+                )}
               </div>
             )
           })}

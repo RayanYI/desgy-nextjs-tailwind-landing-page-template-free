@@ -61,6 +61,7 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -108,4 +109,19 @@ html {
     url('/images/joinus/paint.svg');
   background-repeat: no-repeat, no-repeat;
   background-position: 90% 100%, 2% 18%;
+}
+
+/* Animation légère pour la FAQ - optimisée mobile */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 150ms ease-out;
 }
