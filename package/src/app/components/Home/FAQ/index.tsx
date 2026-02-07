@@ -1,6 +1,9 @@
 'use client'
 import React, { useState } from 'react'
 import { Icon } from '@iconify/react'
+import { motion, AnimatePresence } from 'framer-motion'
+
+const MotionDiv = motion.div as any
 
 const faqData = [
   {
@@ -74,9 +77,9 @@ const FAQ = () => {
             return (
               <div
                 key={index}
-                className={`group rounded-2xl transition-all duration-300 ${isOpen
-                  ? 'bg-white dark:bg-gray-800 shadow-xl border-2 border-blue-500/20'
-                  : 'bg-white/80 dark:bg-gray-800/80 shadow-md hover:shadow-lg border border-gray-100 dark:border-gray-700'
+                className={`group rounded-2xl transition-all duration-300 border-2 ${isOpen
+                  ? 'bg-white dark:bg-gray-800 shadow-xl border-blue-500/20'
+                  : 'bg-white/80 dark:bg-gray-800/80 shadow-md hover:shadow-lg border-gray-100 dark:border-gray-700'
                   }`}
               >
                 <button
@@ -117,16 +120,28 @@ const FAQ = () => {
                 </button>
 
                 {/* Answer */}
-                <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                    }`}
-                >
-                  <div className='px-6 pb-6 pl-[88px]'>
-                    <p className='text-base text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line'>
-                      {item.answer}
-                    </p>
-                  </div>
-                </div>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <MotionDiv
+                      key="content"
+                      initial="collapsed"
+                      animate="open"
+                      exit="collapsed"
+                      variants={{
+                        open: { opacity: 1, height: "auto" },
+                        collapsed: { opacity: 0, height: 0 }
+                      }}
+                      transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
+                      className="overflow-hidden"
+                    >
+                      <div className='px-6 pb-6 pl-[88px]'>
+                        <p className='text-base text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line'>
+                          {item.answer}
+                        </p>
+                      </div>
+                    </MotionDiv>
+                  )}
+                </AnimatePresence>
               </div>
             )
           })}
