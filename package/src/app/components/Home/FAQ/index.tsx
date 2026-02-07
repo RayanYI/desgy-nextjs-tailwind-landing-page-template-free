@@ -74,9 +74,9 @@ const FAQ = () => {
             return (
               <div
                 key={index}
-                className={`group rounded-2xl transition-all duration-300 border-2 ${isOpen
+                className={`group rounded-2xl border-2 transition-colors duration-300 ${isOpen
                   ? 'bg-white dark:bg-gray-800 shadow-xl border-blue-500/20'
-                  : 'bg-white/80 dark:bg-gray-800/80 shadow-md hover:shadow-lg border-gray-100 dark:border-gray-700'
+                  : 'bg-white dark:bg-gray-800 shadow-md hover:shadow-lg border-gray-100 dark:border-gray-700'
                   }`}
               >
                 <button
