@@ -118,17 +118,16 @@ const FAQ = () => {
 
                 {/* Answer */}
                 <div
-                  className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out will-change-[grid-template-rows] ${isOpen
-                    ? 'grid-rows-[1fr] opacity-100'
-                    : 'grid-rows-[0fr] opacity-0'
+                  className={`overflow-hidden transition-all duration-300 ease-out ${isOpen
+                    ? 'max-h-96 opacity-100'
+                    : 'max-h-0 opacity-0'
                     }`}
+                  style={{ willChange: 'max-height, opacity' }}
                 >
-                  <div className="overflow-hidden">
-                    <div className='px-6 pb-6 pl-[88px]'>
-                      <p className='text-base text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line'>
-                        {item.answer}
-                      </p>
-                    </div>
+                  <div className='px-6 pb-6 pl-[88px]'>
+                    <p className='text-base text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line'>
+                      {item.answer}
+                    </p>
                   </div>
                 </div>
               </div>
