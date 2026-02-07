@@ -1,9 +1,6 @@
 'use client'
 import React, { useState } from 'react'
 import { Icon } from '@iconify/react'
-import { motion, AnimatePresence } from 'framer-motion'
-
-const MotionDiv = motion.div as any
 
 const faqData = [
   {
@@ -120,32 +117,25 @@ const FAQ = () => {
                 </button>
 
                 {/* Answer */}
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <MotionDiv
-                      key="content"
-                      initial="collapsed"
-                      animate="open"
-                      exit="collapsed"
-                      variants={{
-                        open: { opacity: 1, height: "auto" },
-                        collapsed: { opacity: 0, height: 0 }
-                      }}
-                      transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
-                      className="overflow-hidden"
-                    >
-                      <div className='px-6 pb-6 pl-[88px]'>
-                        <p className='text-base text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line'>
-                          {item.answer}
-                        </p>
-                      </div>
-                    </MotionDiv>
-                  )}
-                </AnimatePresence>
+                <div
+                  className={`grid transition-all duration-300 ease-in-out ${isOpen
+                    ? 'grid-rows-[1fr] opacity-100'
+                    : 'grid-rows-[0fr] opacity-0'
+                    }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className='px-6 pb-6 pl-[88px]'>
+                      <p className='text-base text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line'>
+                        {item.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             )
           })}
         </div>
+
 
         {/* CTA */}
         <div className='mt-12 text-center'>
