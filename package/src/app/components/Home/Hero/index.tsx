@@ -191,8 +191,7 @@ const Hero = () => {
               </div>
             </MotionDiv>
 
-            <MotionDiv
-              variants={itemVariants}
+            <div
               className='relative w-full h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl group'
             >
               {/* Gradient border effect */}
@@ -201,13 +200,15 @@ const Hero = () => {
                 <Image
                   src='/images/hero/hero-mockup.webp'
                   alt='GoSitePro - Site Web sur Laptop et Mobile'
-                  fill
+                  width={800}
+                  height={800}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className='object-cover transform group-hover:scale-105 transition-transform duration-700'
+                  className='transform group-hover:scale-105 transition-transform duration-700'
                   priority
                 />
               </div>
-            </MotionDiv>
+            </div>
           </div>
         </MotionDiv>
       </div>
