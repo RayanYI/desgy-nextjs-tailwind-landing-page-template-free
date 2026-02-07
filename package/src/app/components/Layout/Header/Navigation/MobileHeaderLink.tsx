@@ -12,10 +12,20 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem; closeMenu: () => void }> = 
     setSubmenuOpen(!submenuOpen);
   };
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent) => {
     if (item.submenu) {
+      e.preventDefault();
       handleToggle();
     } else {
+      if (item.href.includes('#')) {
+        const id = item.href.replace(/^.*#/, '');
+        const element = document.getElementById(id);
+        if (element) {
+          e.preventDefault();
+          element.scrollIntoView({ behavior: 'smooth' });
+          window.history.pushState(null, '', item.href);
+        }
+      }
       closeMenu();
     }
   };
@@ -60,7 +70,18 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem; closeMenu: () => void }> = 
                 <Link
                   key={index}
                   href={subItem.href}
-                  onClick={closeMenu}
+                  onClick={(e) => {
+                    if (subItem.href.includes('#')) {
+                      const id = subItem.href.replace(/^.*#/, '');
+                      const element = document.getElementById(id);
+                      if (element) {
+                        e.preventDefault();
+                        element.scrollIntoView({ behavior: 'smooth' });
+                        window.history.pushState(null, '', subItem.href);
+                      }
+                    }
+                    closeMenu();
+                  }}
                   className="block px-4 py-2 text-base text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-900/50 rounded-lg transition-colors"
                 >
                   {subItem.label}

@@ -120,7 +120,14 @@ const Hero = () => {
             </MotionP>
 
             <MotionDiv variants={itemVariants} className='flex flex-col sm:flex-row gap-4 items-center lg:items-start justify-center lg:justify-start mb-12'>
-              <Link href='#contact'>
+              <Link
+                href='#contact'
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  window.history.pushState(null, '', '#contact');
+                }}
+              >
                 <button className='group relative bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-base sm:text-lg font-semibold py-4 px-8 rounded-full transition-all shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 transform hover:-translate-y-1 cursor-pointer overflow-hidden'>
                   <span className="relative z-10 flex items-center gap-2">
                     Lancer mon site
@@ -129,7 +136,14 @@ const Hero = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </button>
               </Link>
-              <Link href='#portfolio'>
+              <Link
+                href='#portfolio'
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+                  window.history.pushState(null, '', '#portfolio');
+                }}
+              >
                 <button className='group bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 text-base sm:text-lg font-semibold py-4 px-8 rounded-full transition-all border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 cursor-pointer flex items-center gap-2'>
                   <Icon icon="ph:play-circle-fill" className="w-5 h-5 text-blue-600" />
                   Voir nos réalisations

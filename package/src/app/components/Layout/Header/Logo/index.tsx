@@ -3,7 +3,16 @@ import Link from 'next/link'
 
 const Logo: React.FC = () => {
   return (
-    <Link href='/#hero' className='flex items-center gap-3'>
+    <Link
+      href='/#hero'
+      className='flex items-center gap-3'
+      onClick={(e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Optionally update URL without jump
+        window.history.pushState({}, '', '/#hero');
+      }}
+    >
       <Image
         src='/images/logo/gositeprologo.webp'
         alt='GoSitePro Logo'

@@ -94,7 +94,15 @@ const Pricing = () => {
                             </li>
                         </ul>
 
-                        <Link href="#contact" className='mt-auto'>
+                        <Link
+                            href="#contact"
+                            className='mt-auto'
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                window.history.pushState(null, '', '#contact');
+                            }}
+                        >
                             <button className='w-full py-4 px-6 rounded-full border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-white font-semibold hover:border-blue-600 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400 transition-all cursor-pointer group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20'>
                                 Lancer ma présence
                             </button>
@@ -173,7 +181,15 @@ const Pricing = () => {
                                 </li>
                             </ul>
 
-                            <Link href="#contact" className='mt-auto'>
+                            <Link
+                                href="#contact"
+                                className='mt-auto'
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                    window.history.pushState(null, '', '#contact');
+                                }}
+                            >
                                 <button className='w-full py-4 px-6 rounded-full bg-white text-blue-700 font-bold hover:bg-gray-100 transition-all shadow-lg cursor-pointer hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2'>
                                     Je choisis l’offre Croissance
                                     <Icon icon="ph:arrow-right-bold" className="w-5 h-5" />
@@ -226,7 +242,15 @@ const Pricing = () => {
                             </li>
                         </ul>
 
-                        <Link href="#contact" className='mt-auto'>
+                        <Link
+                            href="#contact"
+                            className='mt-auto'
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                window.history.pushState(null, '', '#contact');
+                            }}
+                        >
                             <button className='w-full py-4 px-6 rounded-full border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-white font-semibold hover:border-purple-600 hover:text-purple-600 dark:hover:border-purple-400 dark:hover:text-purple-400 transition-all cursor-pointer group-hover:bg-purple-50 dark:group-hover:bg-purple-900/20'>
                                 Demander une étude personnalisée
                             </button>

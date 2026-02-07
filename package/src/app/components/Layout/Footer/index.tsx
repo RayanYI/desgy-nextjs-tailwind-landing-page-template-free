@@ -1,9 +1,19 @@
+'use client'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Icon } from '@iconify/react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+
+  const handleSmoothScroll = (e: React.MouseEvent, targetId: string) => {
+    const element = document.getElementById(targetId);
+    if (element) {
+      e.preventDefault();
+      element.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', `/#${targetId}`);
+    }
+  }
 
   return (
     <footer className='relative overflow-hidden' id='footer'>
@@ -21,7 +31,11 @@ const Footer = () => {
 
           {/* Brand Column */}
           <div className='lg:col-span-5'>
-            <Link href="/#hero" className="inline-flex items-center gap-2 group">
+            <Link
+              href="/#hero"
+              className="inline-flex items-center gap-2 group"
+              onClick={(e) => handleSmoothScroll(e, 'hero')}
+            >
               <span className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 transition-colors overflow-hidden">
                 <Image
                   src="/images/logo/icon.png"
@@ -64,25 +78,41 @@ const Footer = () => {
               <h5 className='text-sm font-bold text-white mb-6 uppercase tracking-wider'>Navigation</h5>
               <ul className='space-y-4'>
                 <li>
-                  <Link href='/#hero' className='text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2 group'>
+                  <Link
+                    href='/#hero'
+                    className='text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2 group'
+                    onClick={(e) => handleSmoothScroll(e, 'hero')}
+                  >
                     <Icon icon="ph:house" className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                     <span>Accueil</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href='/#portfolio' className='text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2 group'>
+                  <Link
+                    href='/#portfolio'
+                    className='text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2 group'
+                    onClick={(e) => handleSmoothScroll(e, 'portfolio')}
+                  >
                     <Icon icon="ph:images" className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                     <span>Réalisations</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href='/#pricing' className='text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2 group'>
+                  <Link
+                    href='/#pricing'
+                    className='text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2 group'
+                    onClick={(e) => handleSmoothScroll(e, 'pricing')}
+                  >
                     <Icon icon="ph:tag" className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                     <span>Tarifs</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href='/#contact' className='text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2 group'>
+                  <Link
+                    href='/#contact'
+                    className='text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2 group'
+                    onClick={(e) => handleSmoothScroll(e, 'contact')}
+                  >
                     <Icon icon="ph:envelope" className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                     <span>Contact</span>
                   </Link>

@@ -111,6 +111,23 @@ const Header: React.FC = () => {
     { label: 'FAQ', href: '/#faq' },
   ]
 
+  const handleSmoothScroll = (e: React.MouseEvent, href: string) => {
+    if (href.includes('#')) {
+      const id = href.replace(/^.*#/, '');
+      const element = document.getElementById(id);
+      if (element) {
+        e.preventDefault();
+        element.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState(null, '', href);
+      }
+    }
+  }
+
+  const handleMobileLinkClick = (e: React.MouseEvent, href: string) => {
+    handleSmoothScroll(e, href);
+    setNavbarOpen(false);
+  }
+
   return (
     <header
       className={`fixed top-0 z-40 w-full transition-colors duration-300 border-b border-black/10 ${sticky
@@ -131,7 +148,11 @@ const Header: React.FC = () => {
           </nav>
           <div
             className={`flex items-center gap-4 pl-16 lg:border-l border-black/10 duration-300 py-2`}>
-            <Link href='/#contact' className='hidden lg:block group relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-7 py-2.5 rounded-full font-bold transition-all cursor-pointer shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-0.5'>
+            <Link
+              href='/#contact'
+              className='hidden lg:block group relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-7 py-2.5 rounded-full font-bold transition-all cursor-pointer shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-0.5'
+              onClick={(e) => handleSmoothScroll(e, '/#contact')}
+            >
               <span className="relative z-10">Démarrer</span>
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
             </Link>
@@ -239,7 +260,7 @@ const Header: React.FC = () => {
                       >
                         <Link
                           href={link.href}
-                          onClick={() => setNavbarOpen(false)}
+                          onClick={(e) => handleMobileLinkClick(e, link.href)}
                           className="group flex items-center gap-4 px-4 py-4 rounded-2xl text-gray-700 dark:text-gray-200 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-900/20 dark:hover:to-purple-900/20 transition-all duration-300 cursor-pointer"
                         >
                           <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 group-hover:bg-gradient-to-br group-hover:from-blue-500 group-hover:to-purple-600 group-hover:text-white transition-all duration-300 group-hover:shadow-lg group-hover:shadow-blue-500/25">
@@ -263,7 +284,7 @@ const Header: React.FC = () => {
                   >
                     <Link
                       href='/#contact'
-                      onClick={() => setNavbarOpen(false)}
+                      onClick={(e) => handleMobileLinkClick(e, '/#contact')}
                       className='group relative block w-full overflow-hidden rounded-2xl cursor-pointer'
                     >
                       {/* Button background with gradient */}

@@ -26,9 +26,20 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
     >
       <Link
         href={item.href}
+        onClick={(e) => {
+          if (item.href.includes('#')) {
+            const id = item.href.replace(/^.*#/, '');
+            const element = document.getElementById(id);
+            if (element) {
+              e.preventDefault();
+              element.scrollIntoView({ behavior: 'smooth' });
+              window.history.pushState(null, '', item.href);
+            }
+          }
+        }}
         className={`relative text-base font-medium flex items-center gap-1 py-2 transition-colors duration-300 ${isActive
-            ? "text-blue-600 dark:text-blue-400"
-            : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400"
+          ? "text-blue-600 dark:text-blue-400"
+          : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400"
           }`}
       >
         {item.label}
@@ -66,9 +77,20 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
             <Link
               key={index}
               href={subItem.href}
+              onClick={(e) => {
+                if (subItem.href.includes('#')) {
+                  const id = subItem.href.replace(/^.*#/, '');
+                  const element = document.getElementById(id);
+                  if (element) {
+                    e.preventDefault();
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    window.history.pushState(null, '', subItem.href);
+                  }
+                }
+              }}
               className={`relative block px-5 py-3 text-sm font-medium transition-all duration-200 ${path === subItem.href
-                  ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30"
-                  : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50"
+                ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30"
+                : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50"
                 }`}
             >
               {subItem.label}
