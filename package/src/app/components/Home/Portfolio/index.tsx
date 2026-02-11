@@ -25,11 +25,12 @@ const projects: Project[] = [
     },
     {
         title: 'Al Jabeerah',
-        category: 'Prêt à Lancer',
+        category: 'Site En Ligne',
         description: 'L\'excellence mathématique au bout des doigts. Une plateforme pédagogique innovante avec gestion de contenu dynamique et parcours personnalisés.',
         image: '/images/portfolio/aljabeerah.webp',
         videoId: 'dQw4w9WgXcQ',
         color: 'bg-blue-500',
+        link: 'https://www.institut-al-jabeerah.fr/'
     },
     {
         title: 'Faunapedia',
