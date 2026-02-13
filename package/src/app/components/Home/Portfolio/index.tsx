@@ -33,12 +33,13 @@ const projects: Project[] = [
         link: 'https://www.institut-al-jabeerah.fr/'
     },
     {
-        title: 'Faunapedia',
-        category: 'Concept Innovant',
-        description: 'L\'encyclopédie interactive de la faune sauvage. Une expérience immersive pour explorer les espèces du monde entier avec une navigation fluide.',
-        image: '/images/portfolio/faunapedia.webp',
+        title: 'CléAuto34',
+        category: 'Site En Ligne',
+        description: 'Votre expert en solutions automobiles : clé perdue, reprogrammation moteur, diagnostic électronique sur Montpellier et alentours.',
+        image: '/images/portfolio/cleauto34.webp',
         videoId: 'dQw4w9WgXcQ',
-        color: 'bg-purple-500',
+        color: 'bg-orange-500',
+        link: 'https://www.cleauto34.fr/'
     },
 ]
 
